@@ -114,7 +114,7 @@ export function Step5Export({ state, prevStep }: StepProps) {
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
     a.href = url;
-    a.download = state.profile.github ? `${state.profile.github}.md` : "README.md";
+    a.download = state.profile.github ? `${state.profile.github}-README.md` : "README.md";
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
