@@ -1,4 +1,3 @@
-import React from 'react';
 
 export function Header() {
   return (
@@ -39,9 +38,15 @@ export function Header() {
           </a>
         </nav> */}
         <div className="flex items-center gap-3 sm:gap-4">
-          <button className="flex items-center justify-center rounded-lg h-9 sm:h-10 px-4 sm:px-6 bg-primary text-background-dark text-xs sm:text-sm font-bold hover:brightness-110 transition-all">
-            Get Started
-          </button>
+          <a
+            href="https://buymeacoffee.com/bhalli"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-center rounded-lg h-9 sm:h-10 px-4 sm:px-6 bg-primary text-slate-900 text-xs sm:text-sm font-bold hover:brightness-110 transition-all gap-2"
+          >
+            <span className="text-base sm:text-lg">☕</span>
+            <span>Buy me a coffee</span>
+          </a>
         </div>
       </div>
     </header>

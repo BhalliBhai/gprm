@@ -26,7 +26,7 @@ export default function RootLayout({
         suppressHydrationWarning
         className={`${spaceGrotesk.variable} antialiased bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 selection:bg-primary selection:text-background-dark font-display`}
       >
-        <div className="relative min-h-screen w-full flex flex-col overflow-x-hidden grid-pattern">
+        <div className="relative min-h-screen w-full flex flex-col overflow-x-clip grid-pattern">
           <Header />
           <main className="flex-1">
             {children}
