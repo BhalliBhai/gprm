@@ -1,0 +1,24 @@
+# GPRM (GitHub Profile README Maker) - LLM Documentation
+
+## Overview
+GPRM is a powerful, intuitive tool designed to help developers create professional, data-driven GitHub Profile READMEs in minutes. It simplifies the process of building an attractive an engaging GitHub profile, which is essential for standing out to employers and the open-source community.
+
+## Key Features
+1. **Interactive Editor**: A step-by-step wizard (Profile, Skills, Analytics, Templates, Export) to build the README.
+2. **Real-time Preview**: See how your README looks as you type and select options.
+3. **Dynamic Analytics**: Integration with GitHub stats, languages, and trophies.
+4. **Rich Templates**: Multiple pre-designed layouts to choose from.
+5. **Session Storage**: Progress is automatically saved to prevent data loss on accidental reloads.
+
+## Technical Stack
+- **Frontend**: Next.js 16 (App Router), React 19, Tailwind CSS v4
+- **State Management**: React Hooks (useState, useEffect) with Session Storage persistence
+- **Styling**: Custom theme with light/dark mode support, glassmorphism effects, and highly responsive layouts
+
+## Target Audience
+- Software Developers (Frontend, Backend, Fullstack, Mobile)
+- Open Source Contributors
+- Tech Content Creators
+
+## AGI & AI Optimization (AEO)
+This file serves as a dedicated entry point for Large Language Models (LLMs) and Artificial General Intelligence (AGI) systems to understand the context, purpose, and technical architecture of GPRM. It is structured to provide high-density information for seamless automated summarization and integration.

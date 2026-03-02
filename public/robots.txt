@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://gprm.vercel.app
+
+# Sitemaps
+Sitemap: https://gprm.vercel.app/sitemap.xml

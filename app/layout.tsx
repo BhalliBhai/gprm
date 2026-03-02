@@ -11,8 +11,18 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "ReadmeGen - Professional GitHub Profile README Generator",
-  description: "Create professional, data-driven READMEs in minutes with our intuitive generator.",
+  title: "GPRM - Professional GitHub Profile README Generator",
+  description: "Create professional, data-driven GitHub Profile READMEs in minutes with our intuitive generator. Stand out to employers and the community.",
+  keywords: ["GitHub", "Profile README", "Generator", "Developer Portfolio", "Open Source", "Markdown", "Formatting", "SEO", "Optimization", "GPRM", "GitHub Profile README Generator", "GitHub Profile Generator", "GitHub Profile README", "GitHub Profile", "GitHub", "Profile README", "Generator", "Developer Portfolio", "Open Source", "Markdown", "Formatting", "SEO", "Optimization", "GPRM", "GitHub Profile README Generator", "GitHub Profile Generator", "GitHub Profile README Maker", "GitHub Profile", "GitHub", "Profile README", "Generator", "Developer Portfolio", "Open Source", "Markdown", "Formatting", "SEO", "Optimization", "GPRM"],
+  authors: [{ name: "GPRM Team" }],
+  openGraph: {
+    title: "GPRM - GitHub Profile README Generator",
+    description: "Create professional, data-driven READMEs in minutes.",
+    type: "website",
+  },
+  icons: {
+    icon: "/icon.svg",
+  },
 };
 
 export default function RootLayout({
