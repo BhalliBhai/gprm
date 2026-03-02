@@ -39,7 +39,7 @@ export function Header() {
         </nav> */}
         <div className="flex items-center gap-3 sm:gap-4">
           <a
-            href="https://buymeacoffee.com/bhalli"
+            href={process.env.NEXT_PUBLIC_BUY_ME_A_COFFEE_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center justify-center rounded-lg h-9 sm:h-10 px-4 sm:px-6 bg-primary text-slate-900 text-xs sm:text-sm font-bold hover:brightness-110 transition-all gap-2"
