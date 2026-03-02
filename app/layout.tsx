@@ -13,7 +13,7 @@ const spaceGrotesk = Space_Grotesk({
 export const metadata: Metadata = {
   title: "GPRM - Professional GitHub Profile README Generator",
   description: "Create professional, data-driven GitHub Profile READMEs in minutes with our intuitive generator. Stand out to employers and the community.",
-  keywords: ["GitHub", "Profile README", "Generator", "Developer Portfolio", "Open Source", "Markdown", "Formatting", "SEO", "Optimization", "GPRM", "GitHub Profile README Generator", "GitHub Profile Generator", "GitHub Profile README", "GitHub Profile", "GitHub", "Profile README", "Generator", "Developer Portfolio", "Open Source", "Markdown", "Formatting", "SEO", "Optimization", "GPRM", "GitHub Profile README Generator", "GitHub Profile Generator", "GitHub Profile README Maker", "GitHub Profile", "GitHub", "Profile README", "Generator", "Developer Portfolio", "Open Source", "Markdown", "Formatting", "SEO", "Optimization", "GPRM"],
+  keywords: ["GitHub", "Profile README", "Generator", "Developer Portfolio", "Open Source", "Markdown", "Formatting", "SEO", "Optimization", "GPRM", "GitHub Profile README Generator", "GitHub Profile Generator", "GitHub Profile README", "GitHub Profile", "GitHub", "Profile README", "Generator", "Developer Portfolio", "Open Source", "Markdown", "Formatting", "SEO", "Optimization", "GPRM", "GitHub Profile README Generator", "GitHub Profile Generator", "GitHub Profile README Maker", "GitHub Profile Maker", "GitHub", "Profile README", "Generator", "Developer Portfolio", "Open Source", "Markdown", "Formatting", "SEO", "Optimization", "GPRM", "Bhalli", "Bhalli B", "BhalliSoft", "BhalliSoft.com", "Bhalli Soft"],
   authors: [{ name: "GPRM Team" }],
   openGraph: {
     title: "GPRM - GitHub Profile README Generator",

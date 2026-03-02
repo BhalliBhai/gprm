@@ -24,9 +24,9 @@ export default function Home() {
               <Link href="/editor" className="flex items-center justify-center gap-2 rounded-lg h-14 px-8 bg-primary text-background-dark text-base font-bold hover:scale-[1.02] transition-transform glow-effect w-full sm:w-auto">
                 Get Started <span className="material-symbols-outlined">arrow_forward</span>
               </Link>
-              <button className="flex items-center justify-center gap-2 rounded-lg h-14 px-8 border border-slate-200 dark:border-primary/20 bg-white dark:bg-primary/5 text-slate-900 dark:text-white text-base font-bold hover:bg-slate-50 dark:hover:bg-primary/10 transition-all w-full sm:w-auto">
+              {/* <button className="flex items-center justify-center gap-2 rounded-lg h-14 px-8 border border-slate-200 dark:border-primary/20 bg-white dark:bg-primary/5 text-slate-900 dark:text-white text-base font-bold hover:bg-slate-50 dark:hover:bg-primary/10 transition-all w-full sm:w-auto">
                 Watch Demo <span className="material-symbols-outlined">play_circle</span>
-              </button>
+              </button> */}
             </div>
           </div>
           {/* Visual Preview Mockup */}
