@@ -4,7 +4,8 @@ export default function TermsOfService() {
     <div className="py-20 px-6 max-w-4xl mx-auto">
       <div className="mb-12">
         <h1 className="text-4xl sm:text-5xl font-black text-slate-900 dark:text-white mb-4">Terms of Service</h1>
-        <p className="text-lg text-slate-600 dark:text-slate-400">Last updated: {new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</p>
+        {/* <p className="text-lg text-slate-600 dark:text-slate-400">Last updated: {new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</p> */}
+        <p className="text-lg text-slate-600 dark:text-slate-400">Last updated: March 1, 2026</p>
       </div>
 
       <div className="prose prose-slate dark:prose-invert prose-lg max-w-none text-slate-700 dark:text-slate-300">
