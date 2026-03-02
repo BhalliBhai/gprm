@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { EditorState, INITIAL_STATE } from '@/components/editor/types';
 import { Stepper } from '@/components/editor/Stepper';
 import { Step1Profile } from '@/components/editor/Step1Profile';
@@ -12,6 +12,37 @@ import { Step5Export } from '@/components/editor/Step5Export';
 export default function EditorPage() {
   const [currentStep, setCurrentStep] = useState(1);
   const [editorState, setEditorState] = useState<EditorState>(INITIAL_STATE);
+  const isInitialMount = useRef(true);
+  const isStateLoaded = useRef(false);
+
+  useEffect(() => {
+    const savedStep = sessionStorage.getItem('gprm-step');
+    const savedState = sessionStorage.getItem('gprm-state');
+    
+    if (savedStep) {
+      // eslint-disable-next-line
+      setCurrentStep(parseInt(savedStep, 10));
+    }
+    if (savedState) {
+      try {
+        setEditorState(JSON.parse(savedState));
+      } catch (e) {
+        console.error('Failed to parse saved state from sessionStorage', e);
+      }
+    }
+    isStateLoaded.current = true;
+  }, []);
+
+  useEffect(() => {
+    if (isInitialMount.current) {
+      isInitialMount.current = false;
+      return;
+    }
+    if (isStateLoaded.current) {
+      sessionStorage.setItem('gprm-step', currentStep.toString());
+      sessionStorage.setItem('gprm-state', JSON.stringify(editorState));
+    }
+  }, [currentStep, editorState]);
 
   const nextStep = () => setCurrentStep((prev) => Math.min(prev + 1, 5));
   const prevStep = () => setCurrentStep((prev) => Math.max(prev - 1, 1));

@@ -1,4 +1,4 @@
-import React from 'react';
+import Link from 'next/link';
 
 export function Footer() {
   return (
@@ -84,12 +84,12 @@ export function Footer() {
             </p>
           </div>
           <div className="flex flex-wrap justify-center md:justify-end gap-6 text-sm text-slate-500 dark:text-slate-500">
-            <a className="hover:text-primary flex items-center gap-1" href="/privacy-policy">
+            <Link  className="hover:text-primary flex items-center gap-1" href="/privacy-policy">
               <span className="material-symbols-outlined text-xs">policy</span> Privacy Policy
-            </a>
-            <a className="hover:text-primary flex items-center gap-1" href="/terms-of-service">
+            </Link>
+            <Link className="hover:text-primary flex items-center gap-1" href="/terms-of-service">
               <span className="material-symbols-outlined text-xs">gavel</span> Terms of Service
-            </a>
+            </Link>
           </div>
         </div>
       </div>

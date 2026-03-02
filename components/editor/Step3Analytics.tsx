@@ -189,9 +189,9 @@ export function Step3Analytics({ state, setState, nextStep, prevStep }: StepProp
                 <Image 
                   src={`https://komarev.com/ghpvc/?username=${githubUser}&color=11d452&style=for-the-badge`}
                   alt="Visitor Badge" 
-                  className="rounded shadow-sm hover:scale-105 transition-transform duration-500"
-                  width={495}
-                  height={192}
+                  className="rounded shadow-sm hover:scale-105 transition-transform duration-500 mx-auto"
+                  width={200}
+                  height={100}
                 />
               </div>
             )}
