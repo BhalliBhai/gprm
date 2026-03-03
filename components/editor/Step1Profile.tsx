@@ -1,5 +1,9 @@
 import React from 'react';
+import dynamic from 'next/dynamic';
 import { EditorState } from './types';
+
+// Dynamically import MDEditor with ssr disabled
+const MDEditor = dynamic(() => import('@uiw/react-md-editor'), { ssr: false });
 
 interface StepProps {
   state: EditorState;
@@ -159,39 +163,95 @@ export function Step1Profile({ state, setState, nextStep }: StepProps) {
 
       {/* Right Side: About Me Editor */}
       <div className="xl:col-span-7 h-full flex flex-col">
-        <section className="flex flex-1 flex-col rounded-xl border border-primary/10 bg-white dark:bg-primary/5 overflow-hidden shadow-sm min-h-[500px]">
-          <div className="flex items-center justify-between border-b border-primary/10 bg-slate-50 dark:bg-background-dark/20 p-4">
+        <section className="flex flex-1 flex-col rounded-xl border border-primary/10 bg-white dark:bg-primary/5 shadow-sm min-h-[500px]">
+          <div className="flex items-center justify-between border-b border-primary/10 bg-slate-50 dark:bg-background-dark/20 p-4 rounded-t-xl">
             <div className="flex items-center gap-3">
               <span className="material-symbols-outlined text-primary">edit_note</span>
               <h3 className="text-lg font-bold text-slate-900 dark:text-white">About Me</h3>
-              <span className="rounded bg-primary/10 dark:bg-primary/20 px-2 py-0.5 text-[10px] font-bold text-primary uppercase">Markdown Support</span>
-            </div>
-            <div className="hidden sm:flex gap-2">
-              <button className="p-2 text-slate-500 hover:text-primary transition-colors">
-                <span className="material-symbols-outlined text-lg">format_bold</span>
-              </button>
-              <button className="p-2 text-slate-500 hover:text-primary transition-colors">
-                <span className="material-symbols-outlined text-lg">format_italic</span>
-              </button>
-              <button className="p-2 text-slate-500 hover:text-primary transition-colors">
-                <span className="material-symbols-outlined text-lg">link</span>
-              </button>
-              <button className="p-2 text-slate-500 hover:text-primary transition-colors">
-                <span className="material-symbols-outlined text-lg">format_list_bulleted</span>
-              </button>
-              <div className="w-px h-6 bg-slate-200 dark:bg-primary/10 mx-1 self-center"></div>
-              <button className="flex items-center gap-2 rounded bg-primary px-3 py-1 text-xs font-bold text-background-dark hover:brightness-90 transition-all">
-                <span className="material-symbols-outlined text-xs">visibility</span>
-                Preview
-              </button>
+              <span className="rounded bg-primary/10 dark:bg-primary/20 px-2 py-0.5 text-[10px] font-bold text-primary uppercase">Rich Text Support</span>
             </div>
           </div>
-          <div className="flex-1 p-0 flex">
-            <textarea suppressHydrationWarning
-              value={state.profile.about}
-              onChange={(e) => handleProfileChange('about', e.target.value)}
-              className="w-full flex-1 resize-none border-none bg-transparent p-6 font-mono text-sm focus:ring-0 placeholder:text-slate-400 dark:placeholder:text-primary/30 text-slate-700 dark:text-slate-300 outline-none" 
-              placeholder="### 👋 Hi there! I'm Alex..."></textarea>
+          <div className="flex-1 p-0 flex flex-col [&>div]:flex-1" data-color-mode="dark">
+            <style jsx global>{`
+              .wmde-markdown-var {
+                --color-canvas-default: transparent !important;
+                --color-canvas-subtle: transparent !important;
+                --color-border-default: transparent !important;
+              }
+              html:not(.dark) .wmde-markdown-var {
+                --color-canvas-default: transparent !important;
+                --color-canvas-subtle: transparent !important;
+                --color-border-default: transparent !important;
+              }
+              .w-md-editor {
+                border: 1px solid transparent !important;
+                box-shadow: none !important;
+                background-color: rgba(255, 255, 255, 0.5) !important;
+                backdrop-filter: blur(12px) !important;
+                -webkit-backdrop-filter: blur(12px) !important;
+                transition: all 0.2s ease;
+              }
+              html.dark .w-md-editor {
+                background-color: rgba(17, 212, 82, 0.02) !important;
+              }
+              .w-md-editor:focus-within {
+                border-color: #11d452 !important;
+                box-shadow: 0 0 0 1px #11d452 !important;
+                outline: none !important;
+              }
+              .w-md-editor-toolbar {
+                border-bottom: 1px solid rgba(17, 212, 82, 0.1) !important;
+                background-color: rgba(17, 212, 82, 0.05) !important;
+                padding: 8px !important;
+              }
+              html:not(.dark) .w-md-editor-toolbar {
+                background-color: #f8fafc !important; 
+              }
+              .w-md-editor-text-pre > code,
+              .w-md-editor-text-input {
+                font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !important;
+                font-size: 14px !important;
+                line-height: 1.5 !important;
+                // color: #11d452 !important;
+              }
+              .w-md-editor-content {
+                background-color: transparent !important;
+              }
+              /* Fix for dropdown menus in toolbar */
+              .w-md-editor-toolbar-divider + .w-md-editor-toolbar-child,
+              .w-md-editor-toolbar li > ul {
+                background-color: #ffffff !important;
+                border: 1px solid rgba(0,0,0,0.1) !important;
+                box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06) !important;
+              }
+              html.dark .w-md-editor-toolbar li > ul {
+                background-color: #1e293b !important;
+                border: 1px solid rgba(255,255,255,0.1) !important;
+              }
+              .w-md-editor-toolbar li.active > button {
+                color: #11d452 !important;
+              }
+            `}</style>
+            <div className="dark:hidden w-full h-full">
+               <MDEditor
+                value={state.profile.about}
+                onChange={(val: string | undefined) => handleProfileChange('about', val || '')}
+                preview="edit"
+                height="100%"
+                data-color-mode="light"
+                className="w-full flex-1 border-none shadow-none font-mono"
+              />
+            </div>
+            <div className="hidden dark:block w-full h-full">
+               <MDEditor
+                value={state.profile.about}
+                onChange={(val: string | undefined) => handleProfileChange('about', val || '')}
+                preview="edit"
+                height="100%"
+                data-color-mode="dark"
+                className="w-full flex-1 border-none shadow-none font-mono"
+              />
+            </div>
           </div>
           <div className="border-t border-primary/10 bg-slate-50 dark:bg-background-dark/20 p-4 flex flex-col sm:flex-row justify-between items-center gap-4">
             <p className="text-[10px] uppercase tracking-wider opacity-60 dark:opacity-40 font-bold text-slate-500 dark:text-slate-400 w-full sm:w-auto text-center sm:text-left">
