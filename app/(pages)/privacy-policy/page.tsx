@@ -1,3 +1,10 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Privacy Policy",
+  description:
+    "Read the GPRM privacy policy. Learn how we handle your data — GPRM processes everything client-side with no server storage. Your GitHub README data stays in your browser.",
+};
 
 export default function PrivacyPolicy() {
   return (

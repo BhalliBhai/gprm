@@ -1,3 +1,10 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Terms of Service",
+  description:
+    "Terms of Service for GPRM — the free GitHub Profile README Generator. Understand your rights and responsibilities when using our service.",
+};
 
 export default function TermsOfService() {
   return (

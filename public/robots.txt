@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://gprm.vercel.app
+Host: https://gprm.bhalli.dev
 
 # Sitemaps
-Sitemap: https://gprm.vercel.app/sitemap.xml
+Sitemap: https://gprm.bhalli.dev/sitemap.xml
