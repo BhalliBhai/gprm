@@ -154,6 +154,12 @@ export function Step5Export({ state, prevStep }: StepProps) {
           </button>
         </div>
 
+        {/* Back Button */}
+        <button onClick={prevStep} className="flex items-center justify-center gap-2 w-full p-3 text-sm font-bold opacity-70 hover:opacity-100 hover:text-primary transition-all text-slate-600 dark:text-slate-300 rounded-xl border border-slate-200 dark:border-primary/10 bg-white dark:bg-primary/5">
+          <span className="material-symbols-outlined font-bold text-sm">arrow_back</span>
+          Back to Templates
+        </button>
+
         {/* How to use */}
         <div className="bg-white dark:bg-primary/5 border border-slate-200 dark:border-primary/10 rounded-xl p-6 space-y-6 shadow-sm hidden md:block">
           <h3 className="font-bold text-lg flex items-center gap-2 text-slate-900 dark:text-white">

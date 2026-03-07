@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import dynamic from 'next/dynamic';
 import { EditorState } from './types';
 
@@ -13,6 +13,12 @@ interface StepProps {
 }
 
 export function Step1Profile({ state, setState, nextStep }: StepProps) {
+  const [isGenerating, setIsGenerating] = useState(false);
+  const [showAiPanel, setShowAiPanel] = useState(false);
+  const [aiTone, setAiTone] = useState('professional');
+  const [aiError, setAiError] = useState('');
+  const [aiRemaining, setAiRemaining] = useState<number | null>(null);
+
   const handleProfileChange = (field: keyof EditorState['profile'], value: string) => {
     setState((prev) => ({
       ...prev,
@@ -24,6 +30,37 @@ export function Step1Profile({ state, setState, nextStep }: StepProps) {
   };
 
   const clearAbout = () => handleProfileChange('about', '');
+
+  const handleGenerateAI = async () => {
+    setIsGenerating(true);
+    setAiError('');
+    try {
+      const res = await fetch('/api/generate-bio', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: state.profile.fullName,
+          title: state.profile.title,
+          email: state.profile.email,
+          github: state.profile.github,
+          skills: state.skills,
+          tone: aiTone,
+        }),
+      });
+      const data = await res.json();
+      if (!res.ok) {
+        setAiError(data.error || 'Failed to generate bio.');
+        return;
+      }
+      handleProfileChange('about', data.bio);
+      if (data.remaining !== undefined) setAiRemaining(data.remaining);
+      setShowAiPanel(false);
+    } catch {
+      setAiError('Network error. Please try again.');
+    } finally {
+      setIsGenerating(false);
+    }
+  };
 
   return (
     <div className="grid grid-cols-1 xl:grid-cols-12 gap-8">
@@ -65,6 +102,19 @@ export function Step1Profile({ state, setState, nextStep }: StepProps) {
                   className="w-full rounded-lg border border-slate-200 dark:border-primary/20 bg-slate-50 dark:bg-background-dark/50 p-3 pl-10 text-sm focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary text-slate-900 dark:text-white" 
                   placeholder="https://alexrivera.dev" 
                   type="url"
+                />
+              </div>
+            </div>
+            <div className="flex flex-col gap-2">
+              <label className="text-sm font-semibold opacity-80 text-slate-700 dark:text-slate-200">📧 Email / Contact</label>
+              <div className="relative">
+                <span className="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-sm opacity-50 text-slate-500 dark:text-slate-400">mail</span>
+                <input suppressHydrationWarning
+                  value={state.profile.email}
+                  onChange={(e) => handleProfileChange('email', e.target.value)}
+                  className="w-full rounded-lg border border-slate-200 dark:border-primary/20 bg-slate-50 dark:bg-background-dark/50 p-3 pl-10 text-sm focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary text-slate-900 dark:text-white" 
+                  placeholder="alex@example.com" 
+                  type="email"
                 />
               </div>
             </div>
@@ -170,7 +220,69 @@ export function Step1Profile({ state, setState, nextStep }: StepProps) {
               <h3 className="text-lg font-bold text-slate-900 dark:text-white">About Me</h3>
               <span className="rounded bg-primary/10 dark:bg-primary/20 px-2 py-0.5 text-[10px] font-bold text-primary uppercase">Rich Text Support</span>
             </div>
+            <button
+              onClick={() => setShowAiPanel(!showAiPanel)}
+              className="flex items-center gap-1.5 rounded-lg bg-primary/10 dark:bg-primary/20 px-3 py-1.5 text-xs font-bold text-primary hover:bg-primary/20 dark:hover:bg-primary/30 transition-all"
+            >
+              <span className="material-symbols-outlined text-sm">auto_awesome</span>
+              Generate with AI
+            </button>
           </div>
+          {/* AI Generation Panel */}
+          {showAiPanel && (
+            <div className="border-b border-primary/10 bg-primary/5 dark:bg-primary/10 p-4">
+              <div className="flex flex-col sm:flex-row items-start sm:items-end gap-4">
+                <div className="flex-1 w-full">
+                  <label className="text-xs font-bold text-slate-600 dark:text-slate-300 uppercase tracking-wider mb-2 block">Tone</label>
+                  <div className="flex flex-wrap gap-2">
+                    {(['professional', 'witty', 'casual', 'minimal'] as const).map((tone) => (
+                      <button
+                        key={tone}
+                        onClick={() => setAiTone(tone)}
+                        className={`rounded-lg px-3 py-1.5 text-xs font-bold capitalize transition-all ${
+                          aiTone === tone
+                            ? 'bg-primary text-background-dark shadow-md'
+                            : 'bg-white dark:bg-background-dark/50 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-primary/20 hover:border-primary/50'
+                        }`}
+                      >
+                        {tone}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+                <button
+                  onClick={handleGenerateAI}
+                  disabled={isGenerating || !state.profile.fullName || !state.profile.github}
+                  className="flex items-center gap-2 rounded-lg bg-primary px-5 py-2.5 text-sm font-black text-background-dark shadow-lg shadow-primary/20 hover:scale-[1.02] active:scale-95 transition-all disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 whitespace-nowrap"
+                >
+                  {isGenerating ? (
+                    <>
+                      <span className="material-symbols-outlined text-sm animate-spin">progress_activity</span>
+                      Generating...
+                    </>
+                  ) : (
+                    <>
+                      <span className="material-symbols-outlined text-sm">auto_awesome</span>
+                      Generate Bio
+                    </>
+                  )}
+                </button>
+              </div>
+              {!state.profile.fullName || !state.profile.github ? (
+                <p className="text-[10px] text-amber-600 dark:text-amber-400 mt-2 font-semibold">
+                  ⚠️ Fill in your Name and GitHub Username above to enable AI generation.
+                </p>
+              ) : null}
+              {aiError && (
+                <p className="text-[10px] text-amber-600 dark:text-amber-400 mt-2 font-semibold">💡 {aiError}</p>
+              )}
+              {aiRemaining !== null && (
+                <p className="text-[10px] text-slate-500 dark:text-slate-400 mt-2">
+                  {aiRemaining} generation{aiRemaining !== 1 ? 's' : ''} remaining this hour
+                </p>
+              )}
+            </div>
+          )}
           <div className="flex-1 p-0 flex flex-col [&>div]:flex-1" data-color-mode="dark">
             <style jsx global>{`
               .wmde-markdown-var {

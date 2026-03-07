@@ -1,6 +1,7 @@
 export interface ProfileState {
   fullName: string;
   title: string;
+  email: string;
   website: string;
   github: string;
   linkedin: string;
@@ -37,6 +38,7 @@ export const INITIAL_STATE: EditorState = {
   profile: {
     fullName: '',
     title: '',
+    email: '',
     about: '',
     github: '',
     twitter: '',
