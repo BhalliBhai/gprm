@@ -17,14 +17,14 @@ export default function PrivacyPolicy() {
 
       <div className="prose prose-slate dark:prose-invert prose-lg max-w-none text-slate-700 dark:text-slate-300">
         <p>
-          Welcome to ReadmeGen. We respect your privacy and are committed to protecting your personal data. This privacy policy will inform you as to how we look after your personal data when you visit our website and tell you about your privacy rights and how the law protects you.
+          Welcome to GPRM. We respect your privacy and are committed to protecting your personal data. This privacy policy will inform you as to how we look after your personal data when you visit our website and tell you about your privacy rights and how the law protects you.
         </p>
 
         <h2 className="text-2xl font-bold text-slate-900 dark:text-white mt-10 mb-4 flex items-center gap-2">
           <span className="material-symbols-outlined text-primary">data_usage</span> 1. Information We Collect
         </h2>
         <p>
-          ReadmeGen is designed to be a client-side tool. We do not require you to create an account or provide any mandatory personal information to use the basic features of the service.
+          GPRM is designed to be a client-side tool. We do not require you to create an account or provide any mandatory personal information to use the basic features of the service.
         </p>
         <p>However, when you use our editor, you may voluntarily input:</p>
         <ul className="list-disc pl-6 space-y-2 mb-6">

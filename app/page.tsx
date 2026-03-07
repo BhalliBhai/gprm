@@ -277,7 +277,7 @@ export default function Home() {
             <span className="material-symbols-outlined text-4xl">rocket_launch</span>
           </div>
           <h2 className="text-3xl sm:text-5xl lg:text-6xl font-bold dark:text-white">Ready to transform your profile?</h2>
-          <p className="text-base sm:text-lg lg:text-xl text-slate-600 dark:text-slate-400 max-w-2xl">Join over 50,000+ developers who have already elevated their GitHub presence using ReadmeGen.</p>
+          <p className="text-base sm:text-lg lg:text-xl text-slate-600 dark:text-slate-400 max-w-2xl">Join over 50,000+ developers who have already elevated their GitHub presence using GPRM.</p>
           <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
             <Link href="/editor" className="w-full sm:w-auto flex items-center justify-center gap-2 rounded-lg h-14 px-10 bg-primary text-background-dark text-lg font-bold hover:scale-[1.05] transition-transform glow-effect">
               Get Started Now <span className="material-symbols-outlined">bolt</span>
