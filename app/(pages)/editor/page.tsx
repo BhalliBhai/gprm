@@ -10,41 +10,37 @@ import { Step4Templates } from '@/components/editor/Step4Templates';
 import { Step5Export } from '@/components/editor/Step5Export';
 
 export default function EditorPage() {
-  const [currentStep, setCurrentStep] = useState(1);
-  const [editorState, setEditorState] = useState<EditorState>(INITIAL_STATE);
+  const [currentStep, setCurrentStep] = useState<number>(() => {
+    if (typeof window === 'undefined') return 1;
+    const savedStep = window.sessionStorage.getItem('gprm-step');
+    if (!savedStep) return 1;
+    const parsed = Number.parseInt(savedStep, 10);
+    if (!Number.isFinite(parsed)) return 1;
+    return Math.min(Math.max(Math.floor(parsed), 1), 5);
+  });
+  const [editorState, setEditorState] = useState<EditorState>(() => {
+    if (typeof window === 'undefined') return INITIAL_STATE;
+    const savedState = window.sessionStorage.getItem('gprm-state');
+    if (!savedState) return INITIAL_STATE;
+    try {
+      return JSON.parse(savedState);
+    } catch {
+      return INITIAL_STATE;
+    }
+  });
   const isInitialMount = useRef(true);
-  const isStateLoaded = useRef(false);
-
-  useEffect(() => {
-    const savedStep = sessionStorage.getItem('gprm-step');
-    const savedState = sessionStorage.getItem('gprm-state');
-    
-    if (savedStep) {
-      // eslint-disable-next-line
-      setCurrentStep(parseInt(savedStep, 10));
-    }
-    if (savedState) {
-      try {
-        setEditorState(JSON.parse(savedState));
-      } catch (e) {
-        console.error('Failed to parse saved state from sessionStorage', e);
-      }
-    }
-    isStateLoaded.current = true;
-  }, []);
+  const totalSteps = 5;
 
   useEffect(() => {
     if (isInitialMount.current) {
       isInitialMount.current = false;
       return;
     }
-    if (isStateLoaded.current) {
-      sessionStorage.setItem('gprm-step', currentStep.toString());
-      sessionStorage.setItem('gprm-state', JSON.stringify(editorState));
-    }
+    sessionStorage.setItem('gprm-step', currentStep.toString());
+    sessionStorage.setItem('gprm-state', JSON.stringify(editorState));
   }, [currentStep, editorState]);
 
-  const nextStep = () => setCurrentStep((prev) => Math.min(prev + 1, 5));
+  const nextStep = () => setCurrentStep((prev) => Math.min(prev + 1, totalSteps));
   const prevStep = () => setCurrentStep((prev) => Math.max(prev - 1, 1));
 
   return (

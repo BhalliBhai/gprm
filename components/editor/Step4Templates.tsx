@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { EditorState } from './types';
+import { SKILL_LABELS } from './Step2Skills';
 
 interface StepProps {
   state: EditorState;
@@ -21,8 +22,12 @@ const ReadmePreview = ({ state }: { state: EditorState }) => {
     <div className="font-sans text-slate-100 bg-[#0d1117] p-8 rounded-b-2xl min-h-[600px] border border-slate-800">
       
       {state.profile.fullName && (
-        <h1 className="text-3xl font-bold border-b border-slate-700 pb-2 mb-4">
-          {state.templateId === 'creative' ? `✨ Hi 👋, I'm ${state.profile.fullName} ✨` : `Hi 👋, I'm ${state.profile.fullName}`}
+            <h1 className="text-3xl font-bold border-b border-slate-700 pb-2 mb-4">
+          {state.templateId === 'creative'
+            ? `✨ Hi 👋, I'm ${state.profile.fullName} ✨`
+            : state.templateId === 'compact'
+              ? `👋 ${state.profile.fullName}`
+              : `Hi 👋, I'm ${state.profile.fullName}`}
         </h1>
       )}
 
@@ -77,7 +82,7 @@ const ReadmePreview = ({ state }: { state: EditorState }) => {
           <h2 className="text-2xl font-bold border-b border-slate-700 pb-2 mb-4">💻 Tech Stack</h2>
           <div className="flex flex-wrap gap-2">
             {state.skills.map(skillId => (
-              <Image key={skillId} src={`https://img.shields.io/badge/${skillId.toUpperCase()}-102216?style=for-the-badge&logo=${skillId}&logoColor=11d452`} alt={skillId} width={100} height={100} />
+              <Image key={skillId} src={`https://img.shields.io/badge/${encodeURIComponent(SKILL_LABELS[skillId] || skillId)}-102216?style=for-the-badge&logo=${skillId}&logoColor=11d452`} alt={SKILL_LABELS[skillId] || skillId} width={100} height={100} />
             ))}
           </div>
         </div>
@@ -106,11 +111,11 @@ const ReadmePreview = ({ state }: { state: EditorState }) => {
 
 export function Step4Templates({ state, setState, nextStep, prevStep }: StepProps) {
   const templates = [
-    { id: 'minimalist', label: 'Minimalist' },
-    { id: 'data-driven', label: 'Data-Driven' },
-    { id: 'developer', label: 'Developer' },
-    { id: 'creative', label: 'Creative' },
-    { id: 'compact', label: 'Compact' },
+    { id: 'minimalist', label: 'Minimalist', subtitle: 'Clean, recruiter-friendly, zero-noise layout' },
+    { id: 'data-driven', label: 'Data-Driven', subtitle: 'Metrics-first profile for engineering impact' },
+    { id: 'developer', label: 'Developer', subtitle: 'Balanced profile with strong technical depth' },
+    { id: 'creative', label: 'Creative', subtitle: 'Bold personality with premium visual energy' },
+    { id: 'compact', label: 'Compact', subtitle: 'Ultra concise format for quick scanning' },
   ];
 
   return (
@@ -124,7 +129,7 @@ export function Step4Templates({ state, setState, nextStep, prevStep }: StepProp
         
         {/* Template Tabs/Toggles */}
         <div className="flex flex-wrap items-center gap-2 bg-slate-100 dark:bg-primary/5 p-1 rounded-xl border border-slate-200 dark:border-primary/10">
-          {templates.map(tpl => (
+              {templates.map(tpl => (
             <button 
               key={tpl.id}
               onClick={() => setState(s => ({ ...s, templateId: tpl.id }))}
@@ -134,7 +139,8 @@ export function Step4Templates({ state, setState, nextStep, prevStep }: StepProp
                   : 'text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-primary/10 rounded-lg'
               }`}
             >
-              {tpl.label}
+              <span className="block text-left">{tpl.label}</span>
+              <span className={`block text-[10px] leading-tight mt-1 ${state.templateId === tpl.id ? 'text-background-dark/80' : 'text-slate-500 dark:text-slate-400'}`}>{tpl.subtitle}</span>
             </button>
           ))}
         </div>

@@ -1,6 +1,8 @@
 import Link from 'next/link';
 
 export default function Home() {
+  const repoUrl = process.env.NEXT_PUBLIC_GPRM_GITHUB_URL || 'https://github.com/BhalliBhai/gprm';
+  const creatorUrl = 'https://bhalli.dev';
   return (
     <>
       {/* Hero Section */}
@@ -28,6 +30,9 @@ export default function Home() {
                 Watch Demo <span className="material-symbols-outlined">play_circle</span>
               </button> */} 
             </div>
+            <p className="text-sm text-slate-500 dark:text-slate-400">
+              Built by <a className="font-bold text-primary hover:underline" href={creatorUrl} target="_blank" rel="noopener noreferrer">Bhalli.dev</a> for developers who want a profile that looks world-class.
+            </p>
           </div>
           {/* Visual Preview Mockup */}
           <div className="relative order-1 lg:order-2 w-full max-w-md mx-auto lg:max-w-full">
@@ -43,7 +48,7 @@ export default function Home() {
                   <span className="material-symbols-outlined text-[10px]">edit</span> readme-editor.md
                 </div>
               </div>
-              <div className="aspect-square sm:aspect-[4/3] lg:aspect-square xl:aspect-[4/3] w-full bg-white dark:bg-background-dark p-4 sm:p-6 overflow-hidden">
+              <div className="aspect-square sm:aspect-4/3 lg:aspect-square xl:aspect-4/3 w-full bg-white dark:bg-background-dark p-4 sm:p-6 overflow-hidden">
                 <div className="space-y-4 sm:space-y-6">
                   <div className="flex items-center justify-between">
                     <div className="h-6 sm:h-8 w-32 sm:w-48 bg-slate-100 dark:bg-primary/10 rounded-lg"></div>
@@ -82,7 +87,7 @@ export default function Home() {
       </section>
 
       {/* How It Works */}
-      <section className="py-16 sm:py-24 px-6 border-y border-slate-200 dark:border-primary/10 bg-slate-50 dark:bg-white/[0.02]">
+      <section className="py-16 sm:py-24 px-6 border-y border-slate-200 dark:border-primary/10 bg-slate-50 dark:bg-white/2">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col items-center text-center gap-4 mb-12 sm:mb-20">
             <span className="text-primary font-bold text-sm uppercase tracking-[0.2em] flex items-center gap-2">
@@ -225,7 +230,7 @@ export default function Home() {
 
             {/* Right: Visual Card */}
             <div className="relative">
-              <div className="absolute -inset-1 bg-gradient-to-r from-primary/40 via-primary/20 to-primary/40 rounded-2xl blur-sm opacity-60 animate-pulse"></div>
+              <div className="absolute -inset-1 bg-linear-to-r from-primary/40 via-primary/20 to-primary/40 rounded-2xl blur-sm opacity-60 animate-pulse"></div>
               <div className="relative rounded-xl border border-primary/20 bg-white dark:bg-[#0d1117] p-1 shadow-2xl">
                 {/* Top bar */}
                 <div className="flex items-center gap-2 px-4 py-3 border-b border-slate-100 dark:border-primary/10 bg-slate-50 dark:bg-background-dark/50 rounded-t-lg">
@@ -263,6 +268,73 @@ export default function Home() {
                     </span>
                     <span className="px-3 py-1 bg-primary rounded text-background-dark text-[10px] font-bold">Copy to Editor</span>
                   </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Open Source Community Section */}
+      <section className="py-16 sm:py-24 px-6 border-b border-slate-200 dark:border-primary/10 bg-white dark:bg-background-dark">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+          <div className="space-y-5">
+            <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-bold uppercase tracking-[0.2em]">
+              <span className="material-symbols-outlined text-sm">code</span> Open Source
+            </span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 dark:text-white leading-tight">
+              Help Build The Best GitHub README Generator
+            </h2>
+            <p className="text-slate-600 dark:text-slate-400 text-base sm:text-lg leading-relaxed">
+              GPRM is community-driven. Contribute templates, add integrations, improve performance, or ship UI upgrades that help thousands of developers present their best work.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-3">
+              <a
+                href={repoUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2 rounded-lg h-12 px-6 bg-slate-900 text-white dark:bg-primary dark:text-background-dark font-bold hover:scale-[1.02] transition-transform"
+              >
+                <span className="material-symbols-outlined text-lg">deployed_code</span>
+                Contribute on GitHub
+              </a>
+              <a
+                href={creatorUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2 rounded-lg h-12 px-6 border border-slate-300 dark:border-primary/30 text-slate-700 dark:text-slate-200 font-bold hover:border-primary hover:text-primary transition-colors"
+              >
+                <span className="material-symbols-outlined text-lg">person</span>
+                Creator: Bhalli.dev
+              </a>
+            </div>
+          </div>
+          <div className="relative">
+            <div className="absolute -inset-5 bg-primary/15 blur-3xl rounded-full"></div>
+            <div className="relative rounded-2xl border border-slate-200 dark:border-primary/20 bg-slate-50 dark:bg-primary/5 p-8 shadow-xl">
+              <div className="flex items-center justify-between mb-6">
+                <h3 className="text-xl font-black text-slate-900 dark:text-white">Contributor Impact</h3>
+                <a href={repoUrl} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline text-sm font-bold">View Repo</a>
+              </div>
+              <div className="grid grid-cols-2 gap-4">
+                <div className="rounded-xl border border-slate-200 dark:border-primary/15 bg-white dark:bg-background-dark p-4">
+                  <p className="text-2xl font-black text-slate-900 dark:text-white">+Templates</p>
+                  <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">High-quality README designs for every developer persona.</p>
+                </div>
+                <div className="rounded-xl border border-slate-200 dark:border-primary/15 bg-white dark:bg-background-dark p-4">
+                  <p className="text-2xl font-black text-slate-900 dark:text-white">+Integrations</p>
+                  <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">Stats cards, AI flows, badges, and productivity tools.</p>
+                </div>
+                <div className="rounded-xl border border-slate-200 dark:border-primary/15 bg-white dark:bg-background-dark p-4 col-span-2">
+                  <a href={repoUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 group">
+                    <svg className="w-9 h-9 text-slate-900 dark:text-white" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M12 .5a12 12 0 0 0-3.79 23.39c.6.11.82-.26.82-.58v-2.03c-3.34.72-4.04-1.42-4.04-1.42-.55-1.38-1.33-1.75-1.33-1.75-1.08-.74.08-.72.08-.72 1.2.08 1.84 1.23 1.84 1.23 1.06 1.81 2.77 1.29 3.45.99.1-.77.42-1.3.76-1.6-2.67-.31-5.47-1.34-5.47-5.96 0-1.32.47-2.4 1.24-3.24-.12-.31-.54-1.56.12-3.24 0 0 1.01-.32 3.3 1.24a11.4 11.4 0 0 1 6.01 0c2.28-1.56 3.3-1.24 3.3-1.24.66 1.68.24 2.93.12 3.24.77.84 1.24 1.92 1.24 3.24 0 4.63-2.8 5.65-5.48 5.95.43.37.82 1.1.82 2.22v3.29c0 .32.21.69.83.58A12 12 0 0 0 12 .5Z" />
+                    </svg>
+                    <div>
+                      <p className="font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">Join the GPRM GitHub community</p>
+                      <p className="text-xs text-slate-500 dark:text-slate-400">Open issues, pull requests, and roadmap discussions</p>
+                    </div>
+                  </a>
                 </div>
               </div>
             </div>
