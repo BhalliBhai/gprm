@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
 export default function Home() {
-  const repoUrl = process.env.NEXT_PUBLIC_GPRM_GITHUB_URL || 'https://github.com/BhalliBhai/gprm';
+  // const repoUrl = process.env.NEXT_PUBLIC_GPRM_GITHUB_URL || 'https://github.com/BhalliBhai/gprm';
   const creatorUrl = 'https://bhalli.dev';
   return (
     <>
@@ -276,7 +276,7 @@ export default function Home() {
       </section>
 
       {/* Open Source Community Section */}
-      <section className="py-16 sm:py-24 px-6 border-b border-slate-200 dark:border-primary/10 bg-white dark:bg-background-dark">
+      {/* <section className="py-16 sm:py-24 px-6 border-b border-slate-200 dark:border-primary/10 bg-white dark:bg-background-dark">
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
           <div className="space-y-5">
             <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-bold uppercase tracking-[0.2em]">
@@ -340,7 +340,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Final CTA */}
       <section className="py-16 sm:py-24 px-6 relative overflow-hidden">
