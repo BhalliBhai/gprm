@@ -8,7 +8,7 @@ export function Footer() {
           <div className="col-span-1 sm:col-span-2 flex flex-col gap-6">
             <div className="flex items-center gap-3 group">
           <div className="relative">
-            <div className="absolute -inset-1 bg-gradient-to-r from-primary to-blue-600 rounded-lg blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
+            <div className="absolute -inset-1 bg-linear-to-r from-primary to-blue-600 rounded-lg blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
             <div className="relative bg-background-light dark:bg-background-dark p-2 rounded-lg border border-primary/10 flex items-center justify-center">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 sm:w-6 sm:h-6 text-primary">
                 <path d="M7 8L3 12L7 16" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
@@ -17,7 +17,7 @@ export function Footer() {
               </svg>
             </div>
           </div>
-          <div className="flex flex-col -space-y-0">
+          <div className="flex flex-col space-y-0">
             <h2 className="text-xl sm:text-2xl font-black tracking-tighter text-slate-900 dark:text-white">
               GPRM
             </h2>
@@ -29,7 +29,7 @@ export function Footer() {
             <p className="text-slate-500 dark:text-slate-400 max-w-xs leading-relaxed">
               The ultimate tool for developers to create stunning GitHub profile READMEs in seconds.
             </p>
-            <div className="flex gap-4">
+            {/* <div className="flex gap-4">
               <a className="size-10 rounded-lg border border-slate-200 dark:border-primary/10 flex items-center justify-center text-slate-600 dark:text-slate-400 hover:text-primary hover:border-primary/40 transition-all" href="#">
                 <span className="material-symbols-outlined text-xl">code</span>
               </a>
@@ -39,37 +39,35 @@ export function Footer() {
               <a className="size-10 rounded-lg border border-slate-200 dark:border-primary/10 flex items-center justify-center text-slate-600 dark:text-slate-400 hover:text-primary hover:border-primary/40 transition-all" href="#">
                 <span className="material-symbols-outlined text-xl">chat</span>
               </a>
-            </div>
+            </div> */}
           </div>
           <div className="flex flex-col gap-6">
             <h4 className="font-bold text-slate-900 dark:text-white uppercase tracking-wider text-sm flex items-center gap-2">
               <span className="material-symbols-outlined text-sm">category</span> Product
             </h4>
             <nav className="flex flex-col gap-4">
-              <a className="text-slate-500 dark:text-slate-400 hover:text-primary transition-colors flex items-center gap-2" href="#">
+              <Link className="text-slate-500 dark:text-slate-400 hover:text-primary transition-colors flex items-center gap-2" href="/editor">
                 <span className="material-symbols-outlined text-xs">edit_document</span> Editor
-              </a>
-              <a className="text-slate-500 dark:text-slate-400 hover:text-primary transition-colors flex items-center gap-2" href="#">
+              </Link>
+              <Link className="text-slate-500 dark:text-slate-400 hover:text-primary transition-colors flex items-center gap-2" href="/editor">
                 <span className="material-symbols-outlined text-xs">view_quilt</span> Templates
-              </a>
-              <a className="text-slate-500 dark:text-slate-400 hover:text-primary transition-colors flex items-center gap-2" href="#">
+              </Link>
+              <Link className="text-slate-500 dark:text-slate-400 hover:text-primary transition-colors flex items-center gap-2" href="editor">
                 <span className="material-symbols-outlined text-xs">monitoring</span> Stats Tool
-              </a>
+              </Link>
             </nav>
           </div>
           <div className="flex flex-col gap-6">
             <h4 className="font-bold text-slate-900 dark:text-white uppercase tracking-wider text-sm flex items-center gap-2">
-              <span className="material-symbols-outlined text-sm">library_books</span> Resources
+              <span className="material-symbols-outlined text-sm">public</span> Open Source
             </h4>
             <nav className="flex flex-col gap-4">
-              <a className="text-slate-500 dark:text-slate-400 hover:text-primary transition-colors flex items-center gap-2" href="#">
-                <span className="material-symbols-outlined text-xs">code_blocks</span> GitHub Repository
-              </a>
-              <a className="text-slate-500 dark:text-slate-400 hover:text-primary transition-colors flex items-center gap-2" href="#">
-                <span className="material-symbols-outlined text-xs">book</span> Documentation
-              </a>
-              <a className="text-slate-500 dark:text-slate-400 hover:text-primary transition-colors flex items-center gap-2" href="#">
-                <span className="material-symbols-outlined text-xs">forum</span> Community Help
+              <a className="text-slate-500 dark:text-slate-400 hover:text-primary transition-colors flex items-start gap-2 group" href="https://github.com/BhalliBhai/Browser-Testing" target="_blank" rel="noopener noreferrer">
+                <span className="material-symbols-outlined text-sm mt-0.5 group-hover:text-primary transition-colors">devices</span>
+                <div className="flex flex-col">
+                  <span className="font-medium text-slate-700 dark:text-slate-300 group-hover:text-primary transition-colors">Browser Testing Tool</span>
+                  <span className="text-xs mt-1 leading-relaxed opacity-80">Test Safari, Opera, and Firefox on any OS (Windows/Linux) via Node & npm.</span>
+                </div>
               </a>
             </nav>
           </div>
