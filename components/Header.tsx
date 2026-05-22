@@ -1,11 +1,12 @@
 
 export function Header() {
+  const creatorSupportUrl = process.env.NEXT_PUBLIC_BUY_ME_A_COFFEE_URL || "https://buymeacoffee.com/bhalli";
   return (
     <header className="sticky top-0 z-50 w-full border-b border-primary/10 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md">
       <div className="max-w-7xl mx-auto px-6 h-16 sm:h-20 flex items-center justify-between">
         <div className="flex items-center gap-3 group">
           <div className="relative">
-            <div className="absolute -inset-1 bg-gradient-to-r from-primary to-blue-600 rounded-lg blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
+            <div className="absolute -inset-1 bg-linear-to-r from-primary to-blue-600 rounded-lg blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
             <div className="relative bg-background-light dark:bg-background-dark p-2 rounded-lg border border-primary/10 flex items-center justify-center">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 sm:w-6 sm:h-6 text-primary">
                 <path d="M7 8L3 12L7 16" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
@@ -14,7 +15,7 @@ export function Header() {
               </svg>
             </div>
           </div>
-          <div className="flex flex-col -space-y-0">
+          <div className="flex flex-col space-y-0">
             <h2 className="text-xl sm:text-2xl font-black tracking-tighter text-slate-900 dark:text-white">
               GPRM
             </h2>
@@ -39,7 +40,7 @@ export function Header() {
         </nav> */}
         <div className="flex items-center gap-3 sm:gap-4">
           <a
-            href={process.env.NEXT_PUBLIC_BUY_ME_A_COFFEE_URL}
+            href={creatorSupportUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center justify-center rounded-lg h-9 sm:h-10 px-4 sm:px-6 bg-primary text-slate-900 text-xs sm:text-sm font-bold hover:brightness-110 transition-all gap-2"
