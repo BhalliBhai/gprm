@@ -1,10 +1,12 @@
 
+import Link from "next/link";
+
 export function Header() {
   const creatorSupportUrl = process.env.NEXT_PUBLIC_BUY_ME_A_COFFEE_URL || "https://buymeacoffee.com/bhalli";
   return (
     <header className="sticky top-0 z-50 w-full border-b border-primary/10 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md">
       <div className="max-w-7xl mx-auto px-6 h-16 sm:h-20 flex items-center justify-between">
-        <div className="flex items-center gap-3 group">
+        <Link href="/" className="flex items-center gap-3 group">
           <div className="relative">
             <div className="absolute -inset-1 bg-linear-to-r from-primary to-blue-600 rounded-lg blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
             <div className="relative bg-background-light dark:bg-background-dark p-2 rounded-lg border border-primary/10 flex items-center justify-center">
@@ -23,7 +25,7 @@ export function Header() {
               Readme Maker
             </span>
           </div>
-        </div>
+        </Link>
         {/* <nav className="hidden md:flex items-center gap-8 lg:gap-10">
           <a className="text-sm font-medium hover:text-primary transition-colors flex items-center gap-1" href="#">
             <span className="material-symbols-outlined text-[1rem]">dashboard</span> Editor

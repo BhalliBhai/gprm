@@ -184,7 +184,7 @@ export function Step3Analytics({ state, setState, nextStep, prevStep }: StepProp
 
           <div className="flex flex-col items-center justify-center min-h-[600px] p-8 gap-6 relative z-0">
             
-            {state.analytics.showVisitorBadge && (
+             {state.analytics.showVisitorBadge && (
               <div className="flex justify-start w-full max-w-[495px]">
                 <Image 
                   src={`https://komarev.com/ghpvc/?username=${githubUser}&color=11d452&style=for-the-badge`}
@@ -192,6 +192,7 @@ export function Step3Analytics({ state, setState, nextStep, prevStep }: StepProp
                   className="rounded shadow-sm hover:scale-105 transition-transform duration-500 mx-auto"
                   width={200}
                   height={100}
+                  style={{ height: 'auto' }}
                 />
               </div>
             )}
@@ -203,6 +204,7 @@ export function Step3Analytics({ state, setState, nextStep, prevStep }: StepProp
                 className="w-full max-w-[800px] hover:scale-105 transition-transform duration-500"
                 width={800}
                 height={200}
+                style={{ height: 'auto' }}
               />
             )}
 
@@ -213,6 +215,7 @@ export function Step3Analytics({ state, setState, nextStep, prevStep }: StepProp
                 className="w-full max-w-[495px] rounded-xl shadow-lg hover:scale-105 transition-transform duration-500"
                 width={495}
                 height={192}
+                style={{ height: 'auto' }}
               />
             )}
             
@@ -224,6 +227,7 @@ export function Step3Analytics({ state, setState, nextStep, prevStep }: StepProp
                   className="rounded-xl shadow-lg hover:scale-105 transition-transform duration-500 w-full max-w-[300px]"
                   width={300}
                   height={150}
+                  style={{ height: 'auto' }}
                 />
               )}
               
@@ -234,6 +238,7 @@ export function Step3Analytics({ state, setState, nextStep, prevStep }: StepProp
                   className="rounded-xl shadow-lg hover:scale-105 transition-transform duration-500 w-full max-w-[400px]"
                   width={400}
                   height={150}
+                  style={{ height: 'auto' }}
                 />
               )}
             </div>
@@ -245,6 +250,7 @@ export function Step3Analytics({ state, setState, nextStep, prevStep }: StepProp
                 className="w-full max-w-[800px] rounded-xl shadow-lg hover:scale-105 transition-transform duration-500"
                 width={800}
                 height={200}
+                style={{ height: 'auto' }}
               />
             )}
 

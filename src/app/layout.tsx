@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/next";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import { Space_Grotesk } from "next/font/google";
 import "material-symbols/outlined.css";
 import "./globals.css";
@@ -272,6 +273,7 @@ export default function RootLayout({
           </main>
           <Footer />
         </div>
+        <GoogleAnalytics gaId={"G-D4902R6XMY"} />
       </body>
     </html>
   );
