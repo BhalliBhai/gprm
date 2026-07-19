@@ -1,6 +1,5 @@
 import React, { useMemo, useState } from 'react';
-import { EditorState } from './types';
-import { SKILL_LABELS } from './Step2Skills';
+import { EditorState } from '../types';
 
 interface StepProps {
   state: EditorState;
@@ -8,7 +7,7 @@ interface StepProps {
   prevStep: () => void;
 }
 
-import { generateMarkdown } from '../../utils/markdown';
+import { generateMarkdown } from '../../../../utils/markdown';
 
 export function Step5Export({ state, prevStep }: StepProps) {
   const [copied, setCopied] = useState(false);

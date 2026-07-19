@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { EditorState } from './types';
+import { EditorState } from '../types';
 
 interface StepProps {
   state: EditorState;

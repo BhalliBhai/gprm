@@ -1,5 +1,6 @@
 
 import Link from "next/link";
+import Image from "next/image";
 
 export function Header() {
   const creatorSupportUrl = process.env.NEXT_PUBLIC_BUY_ME_A_COFFEE_URL || "https://buymeacoffee.com/bhalli";
@@ -9,17 +10,13 @@ export function Header() {
         <Link href="/" className="flex items-center gap-3 group">
           <div className="relative">
             <div className="absolute -inset-1 bg-linear-to-r from-primary to-blue-600 rounded-lg blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
-            <div className="relative bg-background-light dark:bg-background-dark p-2 rounded-lg border border-primary/10 flex items-center justify-center">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 sm:w-6 sm:h-6 text-primary">
-                <path d="M7 8L3 12L7 16" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
-                <path d="M17 8L21 12L17 16" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
-                <path d="M14 4L10 20" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
+            <div className="relative bg-background-light dark:bg-background-dark rounded-lg border border-primary/10 flex items-center justify-center">
+              <Image className="rounded-full" src="/icon0.svg" alt="Logo" width={50} height={50} />
             </div>
           </div>
           <div className="flex flex-col space-y-0">
             <h2 className="text-xl sm:text-2xl font-black tracking-tighter text-slate-900 dark:text-white">
-              GPRM
+              GITHUB
             </h2>
             <span className="text-[9px] sm:text-[10px] font-bold text-primary/80 uppercase tracking-[0.2em] leading-none">
               Readme Maker

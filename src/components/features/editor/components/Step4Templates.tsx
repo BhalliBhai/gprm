@@ -1,6 +1,6 @@
 import React from 'react';
-import { EditorState } from './types';
-import { generateMarkdown } from '../../utils/markdown';
+import { EditorState } from '../types';
+import { generateMarkdown } from '../../../../utils/markdown';
 import MDEditor from '@uiw/react-md-editor';
 
 interface StepProps {

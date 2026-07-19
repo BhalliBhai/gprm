@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import dynamic from 'next/dynamic';
-import { EditorState } from './types';
+import { EditorState } from '../types';
 
 // Dynamically import MDEditor with ssr disabled
 const MDEditor = dynamic(() => import('@uiw/react-md-editor'), { ssr: false });

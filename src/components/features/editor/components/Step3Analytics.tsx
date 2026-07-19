@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import { EditorState } from './types';
+import { EditorState } from '../types';
 
 interface StepProps {
   state: EditorState;

@@ -1,9 +1,37 @@
 import type { Metadata } from "next";
+import { siteConfig } from "@/config/site";
 
 export const metadata: Metadata = {
-  title: "Terms of Service",
+  title: "Terms of Service | GPRM - GitHub Profile README Maker",
   description:
     "Terms of Service for GPRM — the free GitHub Profile README Generator. Understand your rights and responsibilities when using our service.",
+  alternates: {
+    canonical: "/terms-of-service",
+  },
+  openGraph: {
+    title: "Terms of Service | GPRM - GitHub Profile README Maker",
+    description:
+      "Terms of Service for GPRM — the free GitHub Profile README Generator.",
+    url: "/terms-of-service",
+    type: "website",
+    siteName: "GPRM — GitHub Profile README Maker",
+    locale: "en_US",
+    images: [
+      {
+        url: `${siteConfig.url}/icon.svg`,
+        width: 512,
+        height: 512,
+        alt: "GPRM — GitHub Profile README Generator Logo",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Terms of Service | GPRM - GitHub Profile README Maker",
+    description:
+      "Terms of Service for GPRM — the free GitHub Profile README Generator.",
+    images: [`${siteConfig.url}/icon.svg`],
+  },
 };
 
 export default function TermsOfService() {

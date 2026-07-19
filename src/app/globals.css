@@ -1,28 +1,54 @@
 @import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap");
 @import "tailwindcss";
 
+/* ==========================================================================
+   THEME TOKENS
+   This is the only block you should need to touch to re-theme the site.
+   Everything else (@utility, dark mode, base styles) reads from these.
+   ========================================================================== */
 @theme {
+  /* --- Brand accent -------------------------------------------------------
+     Drives buttons, links, focus rings, glows, and every `primary/NN`
+     opacity variant used across the app (bg-primary/10, border-primary/20,
+     text-primary, etc). Change this one value to re-skin the whole site's
+     accent color. --- */
   --color-primary: #11d452;
+
+  /* --- Surfaces -------------------------------------------------------- */
   --color-background-light: #f6f8f6;
   --color-background-dark: #102216;
+
+  /* --- Typography -------------------------------------------------------- */
   --font-display: "Space Grotesk", sans-serif;
+
+  /* --- Radius scale -------------------------------------------------------
+     Bump these together to go from "sharp/technical" to "soft/friendly". */
   --radius-DEFAULT: 0.25rem;
   --radius-lg: 0.5rem;
   --radius-xl: 0.75rem;
   --radius-full: 9999px;
 }
 
+/* ==========================================================================
+   UTILITIES
+   ========================================================================== */
 @utility grid-pattern {
-  background-image: radial-gradient(circle at 2px 2px, rgba(17, 212, 82, 0.05) 1px, transparent 0);
+  background-image: radial-gradient(circle at 2px 2px, color-mix(in srgb, var(--color-primary) 5%, transparent) 1px, transparent 0);
   background-size: 40px 40px;
 }
 
 @utility glow-effect {
-  box-shadow: 0 0 20px rgba(17, 212, 82, 0.15);
+  box-shadow: 0 0 20px color-mix(in srgb, var(--color-primary) 15%, transparent);
 }
 
+/* ==========================================================================
+   DARK MODE VARIANT
+   ========================================================================== */
 @variant dark (&:where(.dark, .dark *));
 
+/* ==========================================================================
+   BASE STYLES
+   ========================================================================== */
 body {
   font-family: var(--font-display);
 }

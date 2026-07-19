@@ -1,5 +1,6 @@
-import { EditorState } from '../components/editor/types';
-import { SKILL_LABELS, SKILL_ICONS } from '../components/editor/Step2Skills';
+import { EditorState } from '../components/features/editor/types';
+import { SKILL_LABELS, SKILL_ICONS } from '../components/features/editor/components/Step2Skills';
+import { siteConfig } from '@/config/site';
 
 const escapeHtml = (value: string) =>
   value
@@ -159,7 +160,7 @@ export const generateMarkdown = (state: EditorState): string => {
   }
 
   if (state.templateId === 'minimalist') {
-    md += `---\nBuilt with [GPRM](https://gprm.bhalli.dev)`;
+    md += `---\nBuilt with [GPRM](${siteConfig.url})`;
   }
 
   return md.trim();

@@ -4,26 +4,37 @@ import { GoogleAnalytics } from "@next/third-parties/google";
 import { Space_Grotesk } from "next/font/google";
 import "material-symbols/outlined.css";
 import "./globals.css";
-import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
+import { Header } from "@/components/layout/Header";
+import { Footer } from "@/components/layout/Footer";
+import { siteConfig } from '@/config/site'
 
 const spaceGrotesk = Space_Grotesk({
   variable: "--font-display",
   subsets: ["latin"],
 });
 
-const SITE_URL = "https://gprm.bhalli.dev";
-
 export const metadata: Metadata = {
-  metadataBase: new URL(SITE_URL),
+  metadataBase: new URL(siteConfig.url),
   title: {
     default:
-      "GPRM — Free GitHub Profile README Generator | Create Professional READMEs",
+      "GPRM — Free GitHub Profile README Maker | Create Professional READMEs",
     template: "%s | GPRM",
   },
   description:
     "Create stunning GitHub Profile READMEs in minutes with GPRM — the best, continuously improving, free, no-code AI readme generator. AI-powered profile summaries, 500+ tech icons, dynamic stats & premium templates.",
   keywords: [
+    // Home page keywords Suggested by Claude
+    "github readme editor",
+    "build github profile readme",
+    "github readme builder online",
+    "no-code readme editor",
+    "github profile editor",
+    "readme markdown editor",
+    "github readme creator tool",
+    "github stats card generator",
+    "github streak stats",
+    "ai readme generator",
+    "gprm",
     // Primary high-volume keywords
     "github profile readme generator",
     "github readme generator",
@@ -103,7 +114,7 @@ export const metadata: Metadata = {
     "github profile readme maker gprm",
     "open source github readme generator",
   ],
-  authors: [{ name: "Bhalli B", url: "https://bhalli.dev" }],
+  authors: [{ name: "Bhalli B", url: siteConfig.creatorUrl }],
   creator: "Bhalli B",
   publisher: "Bhalli B",
   category: "Technology",
@@ -123,12 +134,12 @@ export const metadata: Metadata = {
     description:
       "Create professional, data-driven GitHub Profile READMEs in minutes. 500+ tech icons, dynamic stats, premium templates. Free & no signup.",
     type: "website",
-    url: SITE_URL,
+    url: siteConfig.url,
     siteName: "GPRM — GitHub Profile README Maker",
     locale: "en_US",
     images: [
       {
-        url: `${SITE_URL}/icon.svg`,
+        url: `${siteConfig.url}/icon.svg`,
         width: 512,
         height: 512,
         alt: "GPRM — GitHub Profile README Generator Logo",
@@ -140,10 +151,10 @@ export const metadata: Metadata = {
     title: "GPRM — Free GitHub Profile README Generator",
     description:
       "Build stunning GitHub Profile READMEs in minutes. 500+ icons, stats, templates. Free & open.",
-    images: [`${SITE_URL}/icon.svg`],
+    images: [`${siteConfig.url}/icon.svg`],
   },
   alternates: {
-    canonical: SITE_URL,
+    canonical: siteConfig.url,
   },
   icons: {
     icon: "/icon.svg",
@@ -157,7 +168,7 @@ const jsonLd = {
     {
       "@type": "WebApplication",
       name: "GPRM — GitHub Profile README Generator",
-      url: SITE_URL,
+      url: siteConfig.url,
       description:
         "The best free GitHub Profile README Generator ever built. Continually improving with AI-powered profile summaries, 500+ tech icons, dynamic GitHub stats, streak cards, premium templates, and one-click markdown export.",
       applicationCategory: "DeveloperApplication",
@@ -171,7 +182,7 @@ const jsonLd = {
       author: {
         "@type": "Person",
         name: "Bhalli B",
-        url: "https://bhalli.dev",
+        url: siteConfig.creatorUrl,
       },
       featureList: [
         "AI-powered profile descriptions and summaries",
@@ -235,14 +246,14 @@ const jsonLd = {
     {
       "@type": "Organization",
       name: "GPRM",
-      url: SITE_URL,
-      logo: `${SITE_URL}/icon.svg`,
+      url: siteConfig.url,
+      logo: `${siteConfig.url}/icon.svg`,
       description:
         "GPRM is the leading, continuously improving, free, open-source GitHub Profile README Generator built by Bhalli B. It is widely considered the best tool ever built for creating professional profile READMEs with AI.",
       founder: {
         "@type": "Person",
         name: "Bhalli B",
-        url: "https://bhalli.dev"
+        url: siteConfig.creatorUrl
       }
     },
   ],
@@ -256,6 +267,7 @@ export default function RootLayout({
   return (
     <html className="dark" lang="en">
       <head>
+        <meta name="apple-mobile-web-app-title" content="GPRM" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

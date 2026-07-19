@@ -1,13 +1,13 @@
 "use client";
 
 import { useState, useEffect, useRef } from 'react';
-import { EditorState, INITIAL_STATE } from '@/components/editor/types';
-import { Stepper } from '@/components/editor/Stepper';
-import { Step1Profile } from '@/components/editor/Step1Profile';
-import { Step2Skills } from '@/components/editor/Step2Skills';
-import { Step3Analytics } from '@/components/editor/Step3Analytics';
-import { Step4Templates } from '@/components/editor/Step4Templates';
-import { Step5Export } from '@/components/editor/Step5Export';
+import { EditorState, INITIAL_STATE } from '@/components/features/editor/types';
+import { Stepper } from '@/components/features/editor/components/Stepper';
+import { Step1Profile } from '@/components/features/editor/components/Step1Profile';
+import { Step2Skills } from '@/components/features/editor/components/Step2Skills';
+import { Step3Analytics } from '@/components/features/editor/components/Step3Analytics';
+import { Step4Templates } from '@/components/features/editor/components/Step4Templates';
+import { Step5Export } from '@/components/features/editor/components/Step5Export';
 
 export default function EditorPage() {
   const [currentStep, setCurrentStep] = useState<number>(() => {
