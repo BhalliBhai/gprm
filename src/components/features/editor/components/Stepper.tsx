@@ -1,16 +1,7 @@
-import React from 'react';
-
+import { EDITOR_STEPS as steps } from '../config/steps';
 interface StepperProps {
   currentStep: number;
 }
-
-const steps = [
-  { id: 1, label: "Basic Info", title: "Profile Information", nextLabel: "Skills & Tech Stack" },
-  { id: 2, label: "Tech Stack", title: "Tech Stack & Skills", nextLabel: "Project Stats" },
-  { id: 3, label: "Github Stats", title: "GitHub Analytics", nextLabel: "Choose Template" },
-  { id: 4, label: "Template", title: "Choose Your Template", nextLabel: "Finalize Export" },
-  { id: 5, label: "Finalize", title: "Generate & Export", nextLabel: "Done" },
-];
 
 export function Stepper({ currentStep }: StepperProps) {
   const currentIndex = currentStep - 1;
@@ -48,7 +39,7 @@ export function Stepper({ currentStep }: StepperProps) {
       </div>
 
       {/* Step Indicators */}
-      <div className="mt-4 flex justify-between hidden sm:flex">
+      <div className="mt-4 flex justify-between sm:flex">
         {steps.map((step) => {
           const isCompleted = step.id < currentStep;
           const isCurrent = step.id === currentStep;

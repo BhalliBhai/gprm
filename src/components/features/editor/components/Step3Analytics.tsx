@@ -264,7 +264,7 @@ export function Step3Analytics({ state, setState, nextStep, prevStep }: StepProp
           </div>
         </div>
 
-        <div className="border-t border-primary/10 bg-white dark:bg-background-dark/20 p-4 mt-8 flex justify-between items-center rounded-xl shadow-sm border border-slate-200 dark:border-transparent">
+        <div className="border-t border-primary/10 bg-white dark:bg-background-dark/20 p-4 mt-8 flex justify-between items-center rounded-xl shadow-sm border dark:border-transparent">
           <button onClick={prevStep} className="flex items-center gap-2 text-sm font-bold opacity-70 hover:opacity-100 hover:text-primary transition-all text-slate-600 dark:text-slate-300 px-4 py-2 rounded-lg">
             <span className="material-symbols-outlined font-bold">arrow_back</span>
             Back

@@ -8,6 +8,7 @@ import { Step2Skills } from '@/components/features/editor/components/Step2Skills
 import { Step3Analytics } from '@/components/features/editor/components/Step3Analytics';
 import { Step4Templates } from '@/components/features/editor/components/Step4Templates';
 import { Step5Export } from '@/components/features/editor/components/Step5Export';
+import { EditorFaq } from '@/components/sections/editor/EditorFaq';
 
 export default function EditorPage() {
   const [currentStep, setCurrentStep] = useState<number>(() => {
@@ -89,6 +90,7 @@ export default function EditorPage() {
             />
           )}
         </div>
+        <EditorFaq />
       </div>
     </div>
   );

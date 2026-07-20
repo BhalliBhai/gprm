@@ -2,6 +2,7 @@ import React from 'react';
 import { EditorState } from '../types';
 import { generateMarkdown } from '../../../../utils/markdown';
 import MDEditor from '@uiw/react-md-editor';
+import { TEMPLATES } from '../templates/registry';
 
 interface StepProps {
   state: EditorState;
@@ -24,20 +25,15 @@ const ReadmePreview = ({ state }: { state: EditorState }) => {
 };
 
 export function Step4Templates({ state, setState, nextStep, prevStep }: StepProps) {
-  const templates = [
-    { id: 'minimalist', label: 'Minimalist', subtitle: 'Clean, recruiter-friendly, zero-noise layout' },
-    { id: 'data-driven', label: 'Data-Driven', subtitle: 'Metrics-first profile for engineering impact' },
-    { id: 'developer', label: 'Developer', subtitle: 'Balanced profile with strong technical depth' },
-    { id: 'creative', label: 'Creative', subtitle: 'Bold personality with premium visual energy' },
-    { id: 'compact', label: 'Compact', subtitle: 'Ultra concise format for quick scanning' },
-  ];
+  const templates = TEMPLATES;
+
 
   return (
     <div className="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
       
-      <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
-        <div>
-          <h2 className="text-3xl font-bold mb-2">Step 4: Template Selection & Preview</h2>
+      <div className="">
+        <div className="py-2">
+          <h2 className="text-3xl font-bold mb-2"> Template Selection & Preview</h2>
           <p className="text-slate-500 dark:text-slate-400">Choose a layout style and watch your profile come to life instantly in the live preview.</p>
         </div>
         
@@ -49,8 +45,8 @@ export function Step4Templates({ state, setState, nextStep, prevStep }: StepProp
               onClick={() => setState(s => ({ ...s, templateId: tpl.id }))}
               className={`px-4 py-2 text-sm font-medium transition-all ${
                 state.templateId === tpl.id 
-                  ? 'bg-primary text-background-dark shadow-md rounded-lg' 
-                  : 'text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-primary/10 rounded-lg'
+                  ? 'bg-primary text-background-dark shadow-md rounded-lg cursor-default' 
+                  : 'text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-primary/10 rounded-lg border-primary/20 border cursor-pointer'
               }`}
             >
               <span className="block text-left">{tpl.label}</span>

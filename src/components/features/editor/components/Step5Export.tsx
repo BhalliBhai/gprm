@@ -1,5 +1,9 @@
-import React, { useMemo, useState } from 'react';
+// src/components/features/editor/components/Step5Export.tsx
+import React, { useEffect, useState } from 'react';
 import { EditorState } from '../types';
+import { generateMarkdown } from '../../../../utils/markdown';
+import MDEditor from '@uiw/react-md-editor';
+import { ConfirmDialog } from './ConfirmDialog';
 
 interface StepProps {
   state: EditorState;
@@ -7,24 +11,47 @@ interface StepProps {
   prevStep: () => void;
 }
 
-import { generateMarkdown } from '../../../../utils/markdown';
-
 export function Step5Export({ state, prevStep }: StepProps) {
+  const [markdown, setMarkdown] = useState<string>(() => generateMarkdown(state));
+  const [isDirty, setIsDirty] = useState(false);
   const [copied, setCopied] = useState(false);
-  const markdownContent = useMemo(() => generateMarkdown(state), [state]);
+    const [showDiscardConfirm, setShowDiscardConfirm] = useState(false);
+
+  // Auto-sync from state ONLY until the user makes a manual edit.
+  useEffect(() => {
+    if (!isDirty) {
+      setMarkdown(generateMarkdown(state));
+    }
+  }, [state, isDirty]);
+
+  const handleEditorChange = (value?: string) => {
+    setMarkdown(value ?? '');
+    setIsDirty(true);
+  };
+
+   const handleDiscardClick = () => {
+    if (!isDirty) return;
+    setShowDiscardConfirm(true);
+  };
+
+  const confirmDiscard = () => {
+    setMarkdown(generateMarkdown(state));
+    setIsDirty(false);
+    setShowDiscardConfirm(false);
+  };
 
   const handleCopy = () => {
-    navigator.clipboard.writeText(markdownContent);
+    navigator.clipboard.writeText(markdown);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
 
   const handleDownload = () => {
-    const blob = new Blob([markdownContent], { type: "text/markdown" });
+    const blob = new Blob([markdown], { type: 'text/markdown' });
     const url = URL.createObjectURL(blob);
-    const a = document.createElement("a");
+    const a = document.createElement('a');
     a.href = url;
-    a.download = state.profile.github ? `${state.profile.github}-README.md` : "README.md";
+    a.download = state.profile.github ? `${state.profile.github}-README.md` : 'README.md';
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
@@ -32,62 +59,94 @@ export function Step5Export({ state, prevStep }: StepProps) {
   };
 
   return (
-    <div className="grid grid-cols-1 xl:grid-cols-12 gap-8">
-      <div className="xl:col-span-5 space-y-6">
-        <div className="bg-white dark:bg-primary/5 border border-slate-200 dark:border-primary/10 rounded-xl p-6 flex items-center gap-4 shadow-sm">
+    <div className="space-y-6">
+      {/* Header + actions row */}
+      <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 bg-white dark:bg-primary/5 border border-slate-200 dark:border-primary/10 rounded-xl p-6 shadow-sm">
+        <div className="flex items-center gap-4">
           <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center text-primary shrink-0">
             <span className="material-symbols-outlined text-3xl">check_circle</span>
           </div>
           <div>
-            <h2 className="text-lg font-bold text-slate-900 dark:text-white">Ready to Export</h2>
+            <h2 className="text-lg font-bold text-slate-900 dark:text-white">Review &amp; Export</h2>
             <p className="text-sm text-slate-600 dark:text-slate-400">
-              Your profile README is generated using the <span className="font-bold uppercase text-primary text-xs ml-1">{state.templateId}</span> template.
+              Edit the markdown directly below if you want to tweak anything — the preview updates as you type.
+              {isDirty && (
+                <span className="ml-2 inline-flex items-center gap-1 text-amber-600 dark:text-amber-400 font-semibold">
+                  <span className="material-symbols-outlined text-xs">edit</span> Unsaved manual edits
+                </span>
+              )}
             </p>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div className="flex flex-wrap items-center gap-2">
+          <button
+            onClick={handleDiscardClick}
+            disabled={!isDirty}
+            className="flex items-center gap-1.5 rounded-lg border border-slate-200 dark:border-primary/20 px-4 py-2 text-xs font-bold text-slate-600 dark:text-slate-300 hover:border-primary hover:text-primary transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
+          >
+            <span className="material-symbols-outlined text-sm">restart_alt</span>
+            Discard Changes
+          </button>
           <button
             onClick={handleCopy}
-            className="flex flex-col items-center justify-center gap-2 p-6 bg-primary text-background-dark rounded-xl font-bold shadow-lg shadow-primary/20 hover:scale-[1.02] active:scale-95 transition-all outline-none"
+            className="flex items-center gap-1.5 rounded-lg bg-primary text-background-dark px-4 py-2 text-xs font-black shadow-lg shadow-primary/20 hover:scale-[1.02] active:scale-95 transition-all"
           >
-            <span className="material-symbols-outlined text-3xl">{copied ? 'done_all' : 'content_copy'}</span>
-            <span>{copied ? 'Code Copied!' : 'Copy Markdown'}</span>
+            <span className="material-symbols-outlined text-sm">{copied ? 'done_all' : 'content_copy'}</span>
+            {copied ? 'Copied!' : 'Copy Markdown'}
           </button>
           <button
             onClick={handleDownload}
-            className="flex flex-col items-center justify-center gap-2 p-6 bg-slate-100 dark:bg-white/5 text-slate-900 dark:text-white border border-slate-200 dark:border-white/10 rounded-xl font-medium hover:bg-slate-200 dark:hover:bg-white/10 transition-all hover:scale-[1.02] active:scale-95 outline-none"
+            className="flex items-center gap-1.5 rounded-lg bg-slate-100 dark:bg-white/5 text-slate-900 dark:text-white border border-slate-200 dark:border-white/10 px-4 py-2 text-xs font-bold hover:bg-slate-200 dark:hover:bg-white/10 transition-all"
           >
-            <span className="material-symbols-outlined text-3xl">download</span>
-            <span>Download .MD</span>
+            <span className="material-symbols-outlined text-sm">download</span>
+            Download .MD
           </button>
         </div>
-
-        <button onClick={prevStep} className="flex items-center justify-center gap-2 w-full p-3 text-sm font-bold opacity-70 hover:opacity-100 hover:text-primary transition-all text-slate-600 dark:text-slate-300 rounded-xl border border-slate-200 dark:border-primary/10 bg-white dark:bg-primary/5">
-          <span className="material-symbols-outlined font-bold text-sm">arrow_back</span>
-          Back to Templates
-        </button>
       </div>
 
-      <div className="xl:col-span-7 space-y-4">
-        <div className="flex items-center justify-between">
-          <h3 className="text-xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
-            <span className="material-symbols-outlined text-primary">code</span>
-            Raw Code Preview
-          </h3>
-          <span className="text-[10px] font-bold uppercase tracking-widest text-primary bg-primary/10 border border-primary/20 px-2 py-1 rounded">Markdown</span>
+      {/* Live split editor + preview */}
+      <div className="rounded-2xl border-2 border-primary/30 shadow-[0_0_15px_rgba(17,212,82,0.2)] overflow-hidden bg-slate-900">
+        <div className="bg-[#161b22] px-6 py-3 flex items-center justify-between border-b border-slate-800">
+          <div className="flex items-center gap-4">
+            <div className="flex gap-2">
+              <div className="h-3 w-3 rounded-full bg-red-500/80"></div>
+              <div className="h-3 w-3 rounded-full bg-yellow-500/80"></div>
+              <div className="h-3 w-3 rounded-full bg-green-500/80"></div>
+            </div>
+            <span className="text-xs font-mono opacity-50 text-white">README.md — editable</span>
+          </div>
+          <span className="text-[10px] font-bold uppercase tracking-widest text-primary bg-primary/10 border border-primary/20 px-2 py-1 rounded">
+            Live Preview
+          </span>
         </div>
-        <div className="w-full bg-slate-50 dark:bg-[#0d1117] border border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden shadow-xl flex flex-col h-[400px] xl:h-[600px] relative">
-          <div className="bg-slate-200 dark:bg-[#161b22] px-4 py-3 flex gap-2 border-b border-slate-300 dark:border-slate-800">
-            <div className="w-3 h-3 rounded-full bg-[#ff5f56]"></div>
-            <div className="w-3 h-3 rounded-full bg-[#ffbd2e]"></div>
-            <div className="w-3 h-3 rounded-full bg-[#27c93f]"></div>
-          </div>
-          <div className="p-6 relative flex-1 overflow-y-auto font-mono text-xs sm:text-sm text-slate-800 dark:text-slate-300 leading-relaxed whitespace-pre-wrap rounded-b-xl wrap-break-word">
-            {markdownContent}
-          </div>
+
+        <div data-color-mode="dark" className="[&_.w-md-editor]:min-h-[600px]">
+          <MDEditor
+            value={markdown}
+            onChange={handleEditorChange}
+            preview="live"
+            height={600}
+          />
         </div>
       </div>
+
+      <button
+        onClick={prevStep}
+        className="flex items-center gap-2 text-sm font-bold opacity-70 hover:opacity-100 hover:text-primary transition-all text-slate-600 dark:text-slate-300 px-4 py-2 rounded-lg"
+      >
+        <span className="material-symbols-outlined font-bold">arrow_back</span>
+        Back to Templates
+      </button>
+      
+      <ConfirmDialog
+        open={showDiscardConfirm}
+        title="Discard your changes?"
+        description="Your manual edits to this README will be permanently lost and replaced with a fresh version generated from your current settings."
+        confirmLabel="Discard Changes"
+        onConfirm={confirmDiscard}
+        onCancel={() => setShowDiscardConfirm(false)}
+      />
     </div>
   );
 }

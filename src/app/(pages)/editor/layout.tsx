@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { siteConfig } from "@/config/site";
+import { Header } from "@/components/layout/Header";
 
 export const metadata: Metadata = {
  title: "GitHub README Editor | GPRM - GitHub Profile README Maker",
@@ -82,10 +83,75 @@ export const metadata: Metadata = {
     },
   };
 
+  const editorJsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'HowTo',
+      name: 'How to Create a GitHub Profile README with GPRM',
+      description: 'Step-by-step process for building a GitHub profile README using the GPRM editor.',
+      step: [
+        {
+          '@type': 'HowToStep',
+          name: 'Fill Info',
+          text: 'Add your personal details, biography, and location. No GitHub sign-in required.',
+        },
+        {
+          '@type': 'HowToStep',
+          name: 'Select Tech',
+          text: 'Choose from 500+ icons of frameworks, languages, and tools you use.',
+        },
+        {
+          '@type': 'HowToStep',
+          name: 'Choose Design',
+          text: 'Pick a template layout and customize colors and style to match your brand.',
+        },
+      ],
+    },
+    {
+      '@type': 'FAQPage',
+      mainEntity: [
+        {
+          '@type': 'Question',
+          name: 'Do I need to create an account to use GPRM?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: "No. GPRM doesn't require sign-up or a GitHub OAuth connection. Just enter your public GitHub username and fill in your details directly in the editor.",
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'Is my data saved or stored on your servers?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'No. Everything you enter is processed directly in your browser. GPRM uses browser local storage to save your progress on your device — nothing is transmitted to or stored on our servers.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'Do I need to know Markdown to use the editor?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: "No. GPRM is a no-code tool — you fill in fields and make selections visually, and the editor generates the Markdown for you automatically.",
+          },
+        },
+      ],
+    },
+  ],
+};
+
 export default function EditorLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  return children;
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(editorJsonLd) }}
+      />
+      {children}
+    </>
+  );
 }

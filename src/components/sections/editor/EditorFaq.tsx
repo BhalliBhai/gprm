@@ -12,7 +12,7 @@ const editorFaqs: Faq[] = [
   {
     question: 'Is my data saved or stored on your servers?',
     answer:
-      'No. Everything you enter is processed directly in your browser. GPRM uses browser local storage to save your progress on your device so you can pick up where you left off — nothing is transmitted to or stored on our servers.',
+      'No. Everything you enter is processed directly in your browser. GPRM uses browser local storage to save your progress on your device so you can pick up where you left off - nothing is transmitted to or stored on our servers.',
   },
   {
     question: 'Can I edit my README after generating it?',
@@ -22,7 +22,7 @@ const editorFaqs: Faq[] = [
   {
     question: 'Do I need to know Markdown to use the editor?',
     answer:
-      "No. GPRM is a no-code tool — you fill in fields and make selections visually, and the editor generates the Markdown for you automatically.",
+      "No. GPRM is a no-code tool - you fill in fields and make selections visually, and the editor generates the Markdown for you automatically.",
   },
   {
     question: 'How do I add the generated README to my GitHub profile?',
