@@ -13,7 +13,7 @@ export function FinalCtaSection() {
         </p>
         <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
           <Link
-            href="/editor"
+            href="/generator"
             className="w-full sm:w-auto flex items-center justify-center gap-2 rounded-lg h-14 px-10 bg-primary text-background-dark text-lg font-bold hover:scale-[1.05] transition-transform glow-effect"
           >
             Get Started Now <span className="material-symbols-outlined">bolt</span>

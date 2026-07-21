@@ -17,10 +17,10 @@ const editorFaqs: Faq[] = [
   {
     question: 'Can I edit my README after generating it?',
     answer:
-      'Yes. You can come back to the editor at any time, adjust your info, tech stack, or template, and regenerate the markdown. Your previous progress is preserved via local storage.',
+      'Yes. You can come back to the readme generator at any time, adjust your info, tech stack, or template, and regenerate the markdown. Your previous progress is preserved via local storage.',
   },
   {
-    question: 'Do I need to know Markdown to use the editor?',
+    question: 'Do I need to know Markdown to use the Readme generator?',
     answer:
       "No. GPRM is a no-code tool - you fill in fields and make selections visually, and the editor generates the Markdown for you automatically.",
   },
@@ -35,7 +35,7 @@ export function EditorFaq() {
   return (
     <section className="max-w-3xl mx-auto px-6 py-16 sm:py-20">
       <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mb-8 text-center">
-        Editor FAQs
+        Readme Generator FAQs
       </h2>
       <div className="space-y-3">
         {editorFaqs.map((faq) => (

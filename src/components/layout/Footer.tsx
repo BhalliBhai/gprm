@@ -44,13 +44,13 @@ export function Footer() {
               <span className="material-symbols-outlined text-sm">category</span> Product
             </h4>
             <nav className="flex flex-col gap-4">
-              <Link className="text-slate-500 dark:text-slate-400 hover:text-primary transition-colors flex items-center gap-2" href="/editor">
+              <Link className="text-slate-500 dark:text-slate-400 hover:text-primary transition-colors flex items-center gap-2" href="/generator">
                 <span className="material-symbols-outlined text-xs">edit_document</span> Editor
               </Link>
-              <Link className="text-slate-500 dark:text-slate-400 hover:text-primary transition-colors flex items-center gap-2" href="/editor">
+              <Link className="text-slate-500 dark:text-slate-400 hover:text-primary transition-colors flex items-center gap-2" href="/generator">
                 <span className="material-symbols-outlined text-xs">view_quilt</span> Templates
               </Link>
-              <Link className="text-slate-500 dark:text-slate-400 hover:text-primary transition-colors flex items-center gap-2" href="editor">
+              <Link className="text-slate-500 dark:text-slate-400 hover:text-primary transition-colors flex items-center gap-2" href="generator">
                 <span className="material-symbols-outlined text-xs">monitoring</span> Stats Tool
               </Link>
             </nav>

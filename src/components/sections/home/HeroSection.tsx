@@ -20,7 +20,7 @@ export function HeroSection() {
             Create professional, data-driven READMEs in minutes. Generate your bio with AI, showcase your skills, stats, and projects like a pro - all for free.
           </p>
           <div className="flex flex-col sm:flex-row flex-wrap gap-4 pt-4">
-            <Link href="/editor" className="flex items-center justify-center gap-2 rounded-lg h-14 px-8 bg-primary text-background-dark text-base font-bold hover:scale-[1.02] transition-transform glow-effect w-full sm:w-auto">
+            <Link href="/generator" className="flex items-center justify-center gap-2 rounded-lg h-14 px-8 bg-primary text-background-dark text-base font-bold hover:scale-[1.02] transition-transform glow-effect w-full sm:w-auto">
               Get Started <span className="material-symbols-outlined">arrow_forward</span>
             </Link>
           </div>
@@ -40,7 +40,7 @@ export function HeroSection() {
                 <div className="w-3 h-3 rounded-full bg-green-500/50"></div>
               </div>
               <div className="mx-auto text-[10px] font-mono text-slate-400 dark:text-primary/40 uppercase tracking-widest flex items-center gap-1">
-                <span className="material-symbols-outlined text-[10px]">edit</span> readme-editor.md
+                <span className="material-symbols-outlined text-[10px]">edit</span> readme-generator.md
               </div>
             </div>
             <div className="aspect-square sm:aspect-4/3 lg:aspect-square xl:aspect-4/3 w-full bg-white dark:bg-background-dark p-4 sm:p-6 overflow-hidden">

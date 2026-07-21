@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
 import { siteConfig } from "@/config/site";
-import { Header } from "@/components/layout/Header";
 
 export const metadata: Metadata = {
- title: "GitHub README Editor | GPRM - GitHub Profile README Maker",
+ title: "GitHub README Generator | GPRM - GitHub Profile README Maker",
   description:
     "Build your GitHub Profile README with GPRM's interactive no-code editor. Choose from 500+ tech icons, add GitHub stats and streak cards, select premium templates, and export clean markdown in one click.",
   keywords: [
     "gprm",
     "github readme editor",
+    "github readme generator",
     "build github profile readme",
     "github readme builder online",
     "no-code readme editor",
@@ -55,13 +55,13 @@ export const metadata: Metadata = {
     "readme.md template generator",
   ],
   alternates: {
-    canonical: "/editor",
+    canonical: "/generator",
   },
   openGraph: {
-      title: "GitHub README Editor | GPRM - GitHub Profile README Maker",
+      title: "GitHub README Generator | GPRM - GitHub Profile README Maker",
       description:
-        "Interactive no-code editor — 500+ icons, stats, templates. Build & export your GitHub README in minutes.",
-      url: "/editor",
+        "Interactive no-code generator — 500+ icons, stats, templates. Build & export your GitHub README in minutes.",
+      url: "/generator",
       type: "website",
       siteName: "GPRM — GitHub Profile README Maker",
       locale: "en_US",
@@ -76,14 +76,14 @@ export const metadata: Metadata = {
     },
     twitter: {
       card: "summary_large_image",
-      title: "GitHub README Editor | GPRM - GitHub Profile README Maker",
+      title: "GitHub README Generator | GPRM - GitHub Profile README Maker",
       description:
-        "Interactive no-code editor — 500+ icons, stats, templates. Build & export your GitHub README in minutes.",
+        "Interactive no-code generator — 500+ icons, stats, templates. Build & export your GitHub README in minutes.",
       images: [`${siteConfig.url}/icon.svg`],
     },
   };
 
-  const editorJsonLd = {
+  const generatorJsonLd = {
   '@context': 'https://schema.org',
   '@graph': [
     {
@@ -140,7 +140,7 @@ export const metadata: Metadata = {
   ],
 };
 
-export default function EditorLayout({
+export default function GeneratorLayout({
   children,
 }: {
   children: React.ReactNode;
@@ -149,7 +149,7 @@ export default function EditorLayout({
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(editorJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(generatorJsonLd) }}
       />
       {children}
     </>

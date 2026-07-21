@@ -10,7 +10,7 @@ import { Step4Templates } from '@/components/features/editor/components/Step4Tem
 import { Step5Export } from '@/components/features/editor/components/Step5Export';
 import { EditorFaq } from '@/components/sections/editor/EditorFaq';
 
-export default function EditorPage() {
+export default function GeneratorPage() {
   const [currentStep, setCurrentStep] = useState<number>(() => {
     if (typeof window === 'undefined') return 1;
     const savedStep = window.sessionStorage.getItem('gprm-step');

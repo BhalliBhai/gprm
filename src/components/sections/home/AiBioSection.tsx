@@ -34,7 +34,7 @@ export function AiBioSection() {
               ))}
             </div>
             <Link
-              href="/editor"
+              href="/generator"
               className="flex items-center justify-center gap-2 rounded-lg h-12 px-8 bg-primary text-background-dark text-sm font-bold hover:scale-[1.02] transition-transform glow-effect w-fit mt-2"
             >
               <span className="material-symbols-outlined text-sm">auto_awesome</span>
@@ -91,7 +91,7 @@ export function AiBioSection() {
                 {/* Bottom bar */}
                 <div className="flex items-center justify-between pt-3 border-t border-slate-100 dark:border-primary/10">
                   <span className="text-[10px] text-slate-400 dark:text-slate-500 font-bold uppercase tracking-wider flex items-center gap-1">
-                    <span className="material-symbols-outlined text-primary text-xs">check_circle</span> Generated in 3.2s
+                    <span className="material-symbols-outlined text-primary text-xs">check_circle</span> Generated in 1.2s
                   </span>
                   <span className="px-3 py-1 bg-primary rounded text-background-dark text-[10px] font-bold">Copy to Editor</span>
                 </div>

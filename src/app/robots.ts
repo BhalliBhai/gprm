@@ -14,23 +14,21 @@ export default function robots(): MetadataRoute.Robots {
         // disallow, these named agents still win (specific > wildcard).
         userAgent: [
           // OpenAI
-          'OAI-SearchBot',     // ChatGPT Search citations
-          'ChatGPT-User',      // user-triggered ChatGPT browsing
-          'GPTBot',            // training
+          'OAI-SearchBot',
+          'ChatGPT-User',
+          'GPTBot',
 
           // Anthropic
-          'ClaudeBot',         // training/crawl
-          'Claude-User',       // real-time retrieval
-          'Claude-SearchBot',  // search/citations
+          'ClaudeBot',
+          'Claude-User',
+          'Claude-SearchBot',
 
           // Perplexity
           'PerplexityBot',
           'Perplexity-User',
 
           // Google
-          'Google-Extended',   // Gemini/Vertex training (separate from Googlebot)
-          'Google-Search-Affiliate',
-          'Google-AMP-HTML-Optimizer',  // Google AMP optimization
+          'Google-Extended',
           'Googlebot-News',
           'Googlebot-Image',
           'Googlebot-Video',
@@ -46,23 +44,18 @@ export default function robots(): MetadataRoute.Robots {
           'Grok-DeepSearch',
 
           // Microsoft
-          'Microsoft-Bingbot',     // Bing search
-          'Microsoft-Bing-Semantic-Search',  // Bing semantic search
-          'Microsoft-Bing-Content-Discovery',  // Bing content discovery
+          'Bingbot',
 
           // Apple
-          'Applebot-Extended', // Apple Intelligence
+          'Applebot-Extended',
 
           // Amazon
-          'Amazonbot',         // Alexa / Rufus / AI shopping
+          'Amazonbot',
 
           // Other AI answer engines
-          'DuckAssistBot',      // DuckDuckGo AI answers
-          'YouBot',              // You.com
-          'MistralAI-User',      // Le Chat
           'DuckAssistBot',
           'YouBot',
-          'MistralAI-User'
+          'MistralAI-User'       // Alexa / Rufus / AI shopping
         ],
         allow: '/',
       },

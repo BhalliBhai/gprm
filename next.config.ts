@@ -15,6 +15,15 @@ const nextConfig: NextConfig = {
       {protocol: 'https', hostname: 'www.google.com',},
     ],
   },
+  async redirects() {
+    return [
+      {
+        source: '/editor',
+        destination: '/generator',
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;
