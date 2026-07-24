@@ -33,6 +33,7 @@ export default function robots(): MetadataRoute.Robots {
           'Googlebot-Image',
           'Googlebot-Video',
           'Googlebot',
+          'Googlebot smartphone',
 
           // Meta
           'meta-externalagent',
