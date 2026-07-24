@@ -18,7 +18,7 @@ const steps: Step[] = [
     icon: 'token',
     title: 'Select Tech',
     description:
-      'Pick from 500+ icons of frameworks, languages, and tools you use from our extensive curated library.',
+      'Pick from 200+ icons of frameworks, languages, and tools you use from our extensive curated library.',
   },
   {
     number: '03',

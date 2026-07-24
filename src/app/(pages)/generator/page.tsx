@@ -9,6 +9,7 @@ import { Step3Analytics } from '@/components/features/editor/components/Step3Ana
 import { Step4Templates } from '@/components/features/editor/components/Step4Templates';
 import { Step5Export } from '@/components/features/editor/components/Step5Export';
 import { EditorFaq } from '@/components/sections/editor/EditorFaq';
+import { EditorIntro } from '@/components/sections/editor/EditorIntro';
 
 export default function GeneratorPage() {
   const [currentStep, setCurrentStep] = useState<number>(() => {
@@ -47,6 +48,7 @@ export default function GeneratorPage() {
   return (
     <div className="min-h-screen bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 p-6 md:p-10">
       <div className="mx-auto w-full max-w-7xl">
+        <EditorIntro />
         <Stepper currentStep={currentStep} />
         
         <div className="mt-8">

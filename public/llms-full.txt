@@ -22,7 +22,7 @@ GPRM is a free GitHub Profile README Generator that helps software developers, o
 ## How to Create a GitHub Profile README with GPRM
 
 1. **Fill Your Info** — Enter your name, title, bio, GitHub username, and social links.
-2. **Select Your Tech Stack** — Pick from 500+ icons across every major category.
+2. **Select Your Tech Stack** — Pick from 200+ icons across every major category.
 3. **Configure GitHub Analytics** — Toggle stats, streak, languages, activity graph, trophies, and visitor badge widgets.
 4. **Choose a Template** — Select from seven templates, each rendering all your selected data in a distinct style.
 5. **Review & Export** — Edit the generated markdown directly if needed, then copy or download it.

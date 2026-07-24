@@ -150,7 +150,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "GPRM — Free GitHub Profile README Generator",
     description:
-      "Build stunning GitHub Profile READMEs in minutes. 500+ icons, stats, templates. Free & open.",
+      "Build stunning GitHub Profile READMEs in minutes. 200+ icons, stats, templates. Free & open.",
     images: [`${siteConfig.url}/icon.svg`],
   },
   alternates: {
@@ -214,7 +214,7 @@ const jsonLd = {
           name: "How do I create a GitHub Profile README?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "To create a GitHub Profile README with GPRM: 1) Use the AI tools to generate a bio or fill in your info, 2) Select your tech stack from 500+ icons, 3) Choose a premium template design, 4) Copy or download the generated markdown.",
+            text: "To create a GitHub Profile README with GPRM: 1) Use the AI tools to generate a bio or fill in your info, 2) Select your tech stack from 200+ icons, 3) Choose a premium template design, 4) Copy or download the generated markdown.",
           },
         },
         {

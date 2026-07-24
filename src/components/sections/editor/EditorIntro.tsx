@@ -5,7 +5,7 @@ export function EditorIntro() {
         Build Your GitHub Profile README
       </h1>
       <p className="text-base sm:text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed">
-        Fill in your details, pick your tech stack from 500+ icons, and choose a template — GPRM generates clean,
+        Fill in your details, pick your tech stack from 200+ icons, and choose a template - GPRM generates clean,
         ready-to-use markdown for your GitHub profile in real time. No sign-in, no Markdown knowledge required.
       </p>
     </div>

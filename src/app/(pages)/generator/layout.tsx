@@ -60,7 +60,7 @@ export const metadata: Metadata = {
   openGraph: {
       title: "GitHub README Generator | GPRM - GitHub Profile README Maker",
       description:
-        "Interactive no-code generator — 500+ icons, stats, templates. Build & export your GitHub README in minutes.",
+        "Interactive no-code generator — 200+ icons, stats, templates. Build & export your GitHub README in minutes.",
       url: "/generator",
       type: "website",
       siteName: "GPRM — GitHub Profile README Maker",
@@ -78,7 +78,7 @@ export const metadata: Metadata = {
       card: "summary_large_image",
       title: "GitHub README Generator | GPRM - GitHub Profile README Maker",
       description:
-        "Interactive no-code generator — 500+ icons, stats, templates. Build & export your GitHub README in minutes.",
+        "Interactive no-code generator — 200+ icons, stats, templates. Build & export your GitHub README in minutes.",
       images: [`${siteConfig.url}/icon.svg`],
     },
   };
@@ -99,7 +99,7 @@ export const metadata: Metadata = {
         {
           '@type': 'HowToStep',
           name: 'Select Tech',
-          text: 'Choose from 500+ icons of frameworks, languages, and tools you use.',
+          text: 'Choose from 200+ icons of frameworks, languages, and tools you use.',
         },
         {
           '@type': 'HowToStep',
