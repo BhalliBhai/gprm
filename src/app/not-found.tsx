@@ -4,7 +4,7 @@ export default function NotFound() {
   return (
     <div className="min-h-[80vh] flex flex-col justify-center items-center px-6 relative overflow-hidden">
       {/* Background Decorators */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/20 blur-[120px] rounded-full opacity-30 pointer-events-none"></div>
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-150 h-150 bg-primary/20 blur-[120px] rounded-full opacity-30 pointer-events-none"></div>
 
       <div className="relative z-10 flex flex-col items-center text-center gap-6 max-w-2xl">
         <div className="rounded-2xl bg-primary/10 border border-primary/20 p-6 mb-4 animate-pulse">
@@ -32,7 +32,7 @@ export default function NotFound() {
             Return Home
           </Link>
           <Link 
-            href="/editor" 
+            href="/generator"
             className="flex items-center justify-center gap-2 rounded-lg h-14 px-8 bg-primary text-background-dark text-base font-bold hover:scale-[1.02] transition-transform glow-effect w-full sm:w-auto"
           >
             Go to Editor

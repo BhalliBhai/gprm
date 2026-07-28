@@ -49,7 +49,7 @@ export async function POST(request: NextRequest) {
 
     if (!allowed) {
       return NextResponse.json(
-        { error: `You've used all ${RATE_LIMIT} AI generations for this hour. Please try again later or craft your bio manually — you've got this! ✍️` },
+        { error: `You've used all ${RATE_LIMIT} AI generations for this hour. Please try again later or craft your bio manually - you've got this! ✍️` },
         { status: 429 }
       );
     }
@@ -82,7 +82,7 @@ Instructions:
 - Keep it between 150-300 words.
 - Make it feel authentic and human, not robotic.
 - The tone should be ${toneGuide}.
-- Do NOT include GitHub stats, badges, or images — just text content.`;
+- Do NOT include GitHub stats, badges, or images - just text content.`;
 
     const genAI = new GoogleGenerativeAI(apiKey);
     const modelName = process.env.GEMINI_MODEL || 'gemini-2.5-flash';
@@ -121,9 +121,9 @@ Instructions:
       );
     }
 
-    // Generic fallback — always friendly
+    // Generic fallback - always friendly
     return NextResponse.json(
-      { error: 'Something went wrong while generating your bio. Please try again — it usually works on the second try! 🔄' },
+      { error: 'Something went wrong while generating your bio. Please try again - it usually works on the second try! 🔄' },
       { status: 500 }
     );
   }

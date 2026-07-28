@@ -94,7 +94,7 @@ export const trophiesWidget = (user: string, theme: string) =>
 export const visitorBadge = (user: string) =>
   `<img src="https://komarev.com/ghpvc/?username=${user}&color=11d452&style=for-the-badge" alt="Visitor Badge" />`;
 
-// Animated gradient banner header — capsule-render is a widely used, actively
+// Animated gradient banner header - capsule-render is a widely used, actively
 // maintained free service (hosted on Vercel), same category of dependency as
 // the stats widgets above.
 export const capsuleBanner = (text: string, opts: { type?: string; height?: number; fontColor?: string } = {}) => {
@@ -102,7 +102,7 @@ export const capsuleBanner = (text: string, opts: { type?: string; height?: numb
   return `<img src="https://capsule-render.vercel.app/api?type=${type}&color=0:11d452,100:0d1117&height=${height}&section=header&text=${encodeURIComponent(text)}&fontSize=40&fontColor=${fontColor}&animation=fadeIn" width="100%" alt="banner" />`;
 };
 
-// Animated typing tagline — readme-typing-svg, also a widely used free service.
+// Animated typing tagline - readme-typing-svg, also a widely used free service.
 export const typingSvg = (lines: string[], opts: { width?: number } = {}) => {
   const { width = 480 } = opts;
   const encodedLines = lines.map(encodeURIComponent).join(';');

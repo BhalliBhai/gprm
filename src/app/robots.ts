@@ -9,7 +9,7 @@ export default function robots(): MetadataRoute.Robots {
         allow: '/',
       },
       {
-        // AI search/retrieval + training bots — explicit allow rules here
+        // AI search/retrieval + training bots - explicit allow rules here
         // future-proof you: if the wildcard rule above ever gains a
         // disallow, these named agents still win (specific > wildcard).
         userAgent: [

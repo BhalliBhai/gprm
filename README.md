@@ -1,37 +1,72 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# GPRM - GitHub Profile README Generator
+
+GPRM is a free, no-code tool to generate professional GitHub Profile READMEs with AI bios, 200+ tech icons, and dynamic stats cards.
+
+## Features
+- AI-generated bios (adjustable tone and length)
+- 200+ tech icons and visual templates
+- Stats cards and badges for GitHub activity
+- Export ready-to-use README.md files
 
 ## Getting Started
 
-First, run the development server:
+First, install dependencies:
+```bash
+npm install
+```
 
+Run the development server:
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Contributing
+Contributions are welcome! Please feel free to open an issue or submit a pull request if you notice bugs, want to suggest new features, or add tech stack icons.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Reporting Issues
+Please open an issue at https://github.com/BhalliBhai/gprm with:
+- Steps to reproduce
+- Screenshots or screencasts
+- Browser and OS info
 
-## Learn More
+## License
+This project is licensed under the [MIT License](LICENSE).
 
-To learn more about Next.js, take a look at the following resources:
+## Contact
+Bhalli B - [bhalli.dev](https://bhalli.dev)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+# GPRM - GitHub Profile README Generator
 
-## Deploy on Vercel
+GPRM is a free, no-code tool to generate professional GitHub Profile READMEs with AI bios, 200+ tech icons, and dynamic stats cards.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Features
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-...
+- AI-generated bios (adjustable tone and length)
+- 200+ tech icons and visual templates
+- Stats cards and badges for GitHub activity
+- Export ready-to-use README.md files
+- Getting started
+
+Visit https://gprm.bhalli.dev
+Click Generator → Fill inputs → Select template → Export README
+Contributing
+
+Contributions welcome! Open an issue for bugs or feature requests, then open a PR with a short description and tests where applicable. See CONTRIBUTING.md for guidelines.
+
+Reporting issues
+
+Please open an issue at https://github.com/BhalliBhai/gprm with:
+
+Steps to reproduce
+Screenshots or screencasts
+Browser and OS info We appreciate minimal repros and clear error logs.
+License
+
+MIT (or your chosen license)
+
+Contact
+
+Bhalli B - https://bhalli.dev

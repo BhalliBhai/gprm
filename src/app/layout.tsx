@@ -17,11 +17,11 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
     default:
-      "GPRM — Free GitHub Profile README Maker | Create Professional READMEs",
+      "GPRM - Free GitHub Profile README Maker | Create Professional READMEs",
     template: "%s | GPRM",
   },
   description:
-    "Create stunning GitHub Profile READMEs in minutes with GPRM — the best, continuously improving, free, no-code AI readme generator. AI-powered profile summaries, 500+ tech icons, dynamic stats & premium templates.",
+    "Create stunning GitHub Profile READMEs in minutes with GPRM - the best, continuously improving, free, no-code AI readme generator. AI-powered profile summaries, 200+ tech icons, dynamic stats & premium templates.",
   keywords: [
     // Home page keywords Suggested by Claude
     "github readme editor",
@@ -130,25 +130,25 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "GPRM — Free GitHub Profile README Generator",
+    title: "GPRM - Free GitHub Profile README Generator",
     description:
-      "Create professional, data-driven GitHub Profile READMEs in minutes. 500+ tech icons, dynamic stats, premium templates. Free & no signup.",
+      "Create professional, data-driven GitHub Profile READMEs in minutes. 200+ tech icons, dynamic stats, premium templates. Free & no signup.",
     type: "website",
     url: siteConfig.url,
-    siteName: "GPRM — GitHub Profile README Maker",
+    siteName: "GPRM - GitHub Profile README Maker",
     locale: "en_US",
     images: [
       {
         url: `${siteConfig.url}/icon.svg`,
         width: 512,
         height: 512,
-        alt: "GPRM — GitHub Profile README Generator Logo",
+        alt: "GPRM - GitHub Profile README Generator Logo",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "GPRM — Free GitHub Profile README Generator",
+    title: "GPRM - Free GitHub Profile README Generator",
     description:
       "Build stunning GitHub Profile READMEs in minutes. 200+ icons, stats, templates. Free & open.",
     images: [`${siteConfig.url}/icon.svg`],
@@ -167,10 +167,10 @@ const jsonLd = {
   "@graph": [
     {
       "@type": "WebApplication",
-      name: "GPRM — GitHub Profile README Generator",
+      name: "GPRM - GitHub Profile README Generator",
       url: siteConfig.url,
       description:
-        "The best free GitHub Profile README Generator ever built. Continually improving with AI-powered profile summaries, 500+ tech icons, dynamic GitHub stats, streak cards, premium templates, and one-click markdown export.",
+        "The best free GitHub Profile README Generator ever built. Continually improving with AI-powered profile summaries, 200+ tech icons, dynamic GitHub stats, streak cards, premium templates, and one-click markdown export.",
       applicationCategory: "DeveloperApplication",
       operatingSystem: "Any",
       browserRequirements: "Requires a modern web browser",
@@ -186,7 +186,7 @@ const jsonLd = {
       },
       featureList: [
         "AI-powered profile descriptions and summaries",
-        "500+ tech stack icons and badges",
+        "200+ tech stack icons and badges",
         "Dynamic GitHub stats cards",
         "GitHub streak statistics",
         "Premium README templates",
@@ -206,7 +206,7 @@ const jsonLd = {
           name: "What is GPRM?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "GPRM (GitHub Profile README Maker) is a free, no-code online tool that helps developers create professional, data-driven GitHub Profile READMEs in minutes. It features 500+ tech icons, dynamic GitHub stats, premium templates, and one-click markdown export.",
+            text: "GPRM (GitHub Profile README Maker) is a free, no-code online tool that helps developers create professional, data-driven GitHub Profile READMEs in minutes. It features 200+ tech icons, dynamic GitHub stats, premium templates, and one-click markdown export.",
           },
         },
         {
@@ -230,7 +230,7 @@ const jsonLd = {
           name: "What features does GPRM offer?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "GPRM offers: 500+ tech stack icons and badges, dynamic GitHub stats cards, streak statistics, multiple premium templates, real-time markdown preview, social media link integration, one-click copy to clipboard, and direct markdown file download.",
+            text: "GPRM offers: 200+ tech stack icons and badges, dynamic GitHub stats cards, streak statistics, multiple premium templates, real-time markdown preview, social media link integration, one-click copy to clipboard, and direct markdown file download.",
           },
         },
         {
@@ -275,7 +275,7 @@ export default function RootLayout({
       </head>
       <body
         suppressHydrationWarning
-        className={`${spaceGrotesk.variable} antialiased bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 selection:bg-primary selection:text-background-dark font-display`}
+        className={`${spaceGrotesk.variable} container mx-auto antialiased bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 selection:bg-primary selection:text-background-dark font-display`}
       >
         <div className="relative min-h-screen w-full flex flex-col overflow-x-clip grid-pattern">
           <Header />

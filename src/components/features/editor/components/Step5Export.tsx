@@ -69,7 +69,7 @@ export function Step5Export({ state, prevStep }: StepProps) {
           <div>
             <h2 className="text-lg font-bold text-slate-900 dark:text-white">Review &amp; Export</h2>
             <p className="text-sm text-slate-600 dark:text-slate-400">
-              Edit the markdown directly below if you want to tweak anything — the preview updates as you type.
+              Edit the markdown directly below if you want to tweak anything - the preview updates as you type.
               {isDirty && (
                 <span className="ml-2 inline-flex items-center gap-1 text-amber-600 dark:text-amber-400 font-semibold">
                   <span className="material-symbols-outlined text-xs">edit</span> Unsaved manual edits
@@ -114,7 +114,7 @@ export function Step5Export({ state, prevStep }: StepProps) {
               <div className="h-3 w-3 rounded-full bg-yellow-500/80"></div>
               <div className="h-3 w-3 rounded-full bg-green-500/80"></div>
             </div>
-            <span className="text-xs font-mono opacity-50 text-white">README.md — editable</span>
+            <span className="text-xs font-mono opacity-50 text-white">README.md - editable</span>
           </div>
           <span className="text-[10px] font-bold uppercase tracking-widest text-primary bg-primary/10 border border-primary/20 px-2 py-1 rounded">
             Live Preview

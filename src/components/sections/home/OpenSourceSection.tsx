@@ -4,7 +4,7 @@ const highlights = [
   {
     icon: 'lock_open',
     title: 'MIT Licensed',
-    description: 'Free to use, fork, and build on — no restrictions.',
+    description: 'Free to use, fork, and build on - no restrictions.',
   },
   {
     icon: 'bug_report',
@@ -65,7 +65,7 @@ export function OpenSourceSection() {
             </a>
           </div>
 
-          {/* Highlight chips — qualitative, no fabricated numbers */}
+          {/* Highlight chips - qualitative, no fabricated numbers */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4">
             {highlights.map((item) => (
               <div key={item.title} className="flex flex-col gap-1.5">

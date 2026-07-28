@@ -1,12 +1,16 @@
-# GPRM — GitHub Profile README Generator
+# GPRM - GitHub Profile README Generator
 
-> GPRM (GitHub Profile README Maker) is a free, open-source, no-code tool built by Bhalli B for creating professional, data-driven GitHub Profile READMEs. It features AI-powered bio generation, 500+ tech stack icons, live GitHub stats integration, and multiple README templates.
+> GPRM (GitHub Profile README Maker) is a free, open-source, no-code tool built by Bhalli B for creating professional, data-driven GitHub Profile READMEs. It features AI-powered bio generation, 200+ tech stack icons, live GitHub stats integration, and multiple README templates.
+It includes an AI bio generator, 200+ tech icons, dynamic GitHub stats cards, and premium templates.
+
+## Short description
+GPRM helps developers create clear, recruiter-friendly GitHub profile READMEs with templates, AI bios, and stats cards.
 
 GPRM helps software developers, open-source contributors, and tech professionals build GitHub profile READMEs in minutes without writing markdown by hand. The tool is a step-by-step no-code editor: Profile → Skills → Analytics → Templates → Export.
 
 Key features:
 - AI-powered bio generation with selectable tone (professional, witty, casual, minimal)
-- 500+ searchable tech stack icons across frontend, backend, languages, databases, cloud/DevOps, AI/data, tools, design, mobile, and testing
+- 200+ searchable tech stack icons across frontend, backend, languages, databases, cloud/DevOps, AI/data, tools, design, mobile, and testing
 - Live GitHub stats, streak stats, top-languages, contribution graph, and trophy widgets
 - Seven README templates (Minimalist, Data-Driven, Developer, Creative, Compact, Terminal, Corporate)
 - Real-time, editable markdown preview before export
@@ -15,10 +19,15 @@ Key features:
 
 GPRM is open source under the MIT license. Issues, feature requests, and contributions are welcome on GitHub.
 
-## Docs
+## Pages
 
 - [Homepage](https://gprm.bhalli.dev/): Product overview and features
 - [Editor](https://gprm.bhalli.dev/generator): The interactive README builder
+- https://gprm.bhalli.dev/generator: the main app - build and export a README
+- https://gprm.bhalli.dev/guide: step-by-step tutorial for creating a GitHub profile README
+- https://gprm.bhalli.dev/templates: gallery of available README design templates
+- https://gprm.bhalli.dev/faq: frequently asked questions about GPRM and GitHub profile READMEs
+- https://gprm.bhalli.dev/blog: articles about GitHub profiles, README design, and developer branding
 
 ## Source Code
 
@@ -27,5 +36,5 @@ GPRM is open source under the MIT license. Issues, feature requests, and contrib
 
 ## Optional
 
-- [Privacy Policy](https://gprm.bhalli.dev/privacy-policy): Client-side data handling — nothing stored on GPRM's servers
+- [Privacy Policy](https://gprm.bhalli.dev/privacy-policy): Client-side data handling - nothing stored on GPRM's servers
 - [Terms of Service](https://gprm.bhalli.dev/terms-of-service): Usage terms

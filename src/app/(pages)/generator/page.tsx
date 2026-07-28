@@ -47,7 +47,7 @@ export default function GeneratorPage() {
 
   return (
     <div className="min-h-screen bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 p-6 md:p-10">
-      <div className="mx-auto w-full max-w-7xl">
+      <div className="">
         <EditorIntro />
         <Stepper currentStep={currentStep} />
         

@@ -13,7 +13,7 @@ const features: Feature[] = [
   },
   {
     icon: 'apps',
-    title: '500+ Tech Icons',
+    title: '200+ Tech Icons',
     description:
       'An interactive skill selection grid. Search and filter through a massive library of framework and language badges.',
   },
@@ -65,7 +65,7 @@ export function FeaturesSection() {
             <FeatureCard key={feature.title} {...feature} />
           ))}
 
-          {/* Markdown Export — different layout, kept explicit rather than
+          {/* Markdown Export - different layout, kept explicit rather than
               forced into the shared FeatureCard shape */}
           <div className="p-6 sm:p-8 rounded-xl border border-slate-200 dark:border-primary/10 bg-white dark:bg-primary/5 hover:bg-primary/10 transition-colors sm:col-span-2">
             <div className="flex flex-col md:flex-row gap-6 sm:gap-8 items-start md:items-center">

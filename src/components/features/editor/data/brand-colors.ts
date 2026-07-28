@@ -2,7 +2,7 @@ import * as simpleIcons from 'simple-icons';
 
 /**
  * NOTE: verify this against your installed simple-icons version before
- * trusting it in production — the package's export shape has changed
+ * trusting it in production - the package's export shape has changed
  * across major versions. Confirm `si` + PascalCase(slug) actually resolves
  * to an object with a `.hex` property by checking node_modules/simple-icons
  * or running a quick console.log for a few known slugs (e.g. 'react',

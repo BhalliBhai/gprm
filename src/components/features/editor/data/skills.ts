@@ -14,7 +14,7 @@ export interface Skill {
 //   iconColor?: string;
 // }
 
-// Paste your full existing AVAILABLE_SKILLS array here unchanged — relocated, not rewritten.
+// Paste your full existing AVAILABLE_SKILLS array here unchanged - relocated, not rewritten.
 export const AVAILABLE_SKILLS: Skill[] = [
     // Frontend
   { id: 'react', name: 'React', category: 'Frontend', icon: 'react' },
@@ -251,7 +251,7 @@ export const CATEGORIES = [
 /**
  * Real brand colors (hex, no '#') for the most common skills, used as the
  * exported badge's background so it visually echoes the picker's full-color
- * icon. Not every skill has a confirmed value here — I only included ones
+ * icon. Not every skill has a confirmed value here - I only included ones
  * I'm confident are current and correct; unlisted skills fall back to the
  * site's theme green in markdown.ts rather than guess at a wrong hex.
  */

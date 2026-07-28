@@ -4,7 +4,7 @@ import { siteConfig } from "@/config/site";
 export const metadata: Metadata = {
   title: "Privacy Policy | GPRM - GitHub Profile README Maker",
   description:
-    "Read the GPRM privacy policy. Learn how we handle your data — GPRM processes everything client-side with no server storage. Your GitHub README data stays in your browser.",
+    "Read the GPRM privacy policy. Learn how we handle your data - GPRM processes everything client-side with no server storage. Your GitHub README data stays in your browser.",
   alternates: {
     canonical: "/privacy-policy",
   },
@@ -14,14 +14,14 @@ export const metadata: Metadata = {
       "GPRM processes everything client-side with no server storage. Your GitHub README data stays in your browser.",
     url: "/privacy-policy",
     type: "website",
-    siteName: "GPRM — GitHub Profile README Maker",
+    siteName: "GPRM - GitHub Profile README Maker",
     locale: "en_US",
     images: [
       {
         url: `${siteConfig.url}/icon.svg`,
         width: 512,
         height: 512,
-        alt: "GPRM — GitHub Profile README Generator Logo",
+        alt: "GPRM - GitHub Profile README Generator Logo",
       },
     ],
   },

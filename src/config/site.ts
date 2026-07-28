@@ -5,5 +5,5 @@ export const siteConfig = {
   creatorName: 'Bhalli B',
   repoUrl: 'https://github.com/BhalliBhai/gprm',
   description:
-    'Create stunning GitHub Profile READMEs in minutes with GPRM — the best, continuously improving, free, no-code AI readme generator.',
+    'Create stunning GitHub Profile READMEs in minutes with GPRM - the best, continuously improving, free, no-code AI readme generator.',
 } as const;

@@ -4,7 +4,7 @@ import { siteConfig } from "@/config/site";
 export const metadata: Metadata = {
  title: "GitHub README Generator | GPRM - GitHub Profile README Maker",
   description:
-    "Build your GitHub Profile README with GPRM's interactive no-code editor. Choose from 500+ tech icons, add GitHub stats and streak cards, select premium templates, and export clean markdown in one click.",
+    "Build your GitHub Profile README with GPRM's interactive no-code editor. Choose from 200+ tech icons, add GitHub stats and streak cards, select premium templates, and export clean markdown in one click.",
   keywords: [
     "gprm",
     "github readme editor",
@@ -60,17 +60,17 @@ export const metadata: Metadata = {
   openGraph: {
       title: "GitHub README Generator | GPRM - GitHub Profile README Maker",
       description:
-        "Interactive no-code generator — 200+ icons, stats, templates. Build & export your GitHub README in minutes.",
+        "Interactive no-code generator - 200+ icons, stats, templates. Build & export your GitHub README in minutes.",
       url: "/generator",
       type: "website",
-      siteName: "GPRM — GitHub Profile README Maker",
+      siteName: "GPRM - GitHub Profile README Maker",
       locale: "en_US",
       images: [
         {
           url: `${siteConfig.url}/icon.svg`,
           width: 512,
           height: 512,
-          alt: "GPRM — GitHub Profile README Generator Logo",
+          alt: "GPRM - GitHub Profile README Generator Logo",
         },
       ],
     },
@@ -78,7 +78,7 @@ export const metadata: Metadata = {
       card: "summary_large_image",
       title: "GitHub README Generator | GPRM - GitHub Profile README Maker",
       description:
-        "Interactive no-code generator — 200+ icons, stats, templates. Build & export your GitHub README in minutes.",
+        "Interactive no-code generator - 200+ icons, stats, templates. Build & export your GitHub README in minutes.",
       images: [`${siteConfig.url}/icon.svg`],
     },
   };
@@ -124,7 +124,7 @@ export const metadata: Metadata = {
           name: 'Is my data saved or stored on your servers?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'No. Everything you enter is processed directly in your browser. GPRM uses browser local storage to save your progress on your device — nothing is transmitted to or stored on our servers.',
+            text: 'No. Everything you enter is processed directly in your browser. GPRM uses browser local storage to save your progress on your device - nothing is transmitted to or stored on our servers.',
           },
         },
         {
@@ -132,7 +132,7 @@ export const metadata: Metadata = {
           name: 'Do I need to know Markdown to use the editor?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: "No. GPRM is a no-code tool — you fill in fields and make selections visually, and the editor generates the Markdown for you automatically.",
+            text: "No. GPRM is a no-code tool - you fill in fields and make selections visually, and the editor generates the Markdown for you automatically.",
           },
         },
       ],
