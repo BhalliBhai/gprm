@@ -33,7 +33,7 @@ export const blogPosts: BlogPostMeta[] = [
   },
   {
     slug: "github-profile-readme-ideas-recruiters-attention",
-    title: "15 GitHub Profile README Ideas That Actually Get Recruiters' Attention",
+    title: "5 GitHub Profile README Ideas That Actually Get Recruiters' Attention",
     description: "Tired of boring profiles? Here are 15 actionable design layout ideas, content sections, and templates that make hiring managers stop and read.",
     publishDate: "2026-07-27",
     readTime: "5 min read",
