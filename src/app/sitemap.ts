@@ -1,6 +1,6 @@
 import { MetadataRoute } from 'next';
 import { siteConfig } from '@/config/site';
-import { blogPosts } from '@/lib/blog-data';
+import { getAllPosts } from '@/lib/blog';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticPages = [
@@ -54,9 +54,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 
-  const blogPostPages = blogPosts.map((post) => ({
+  const blogPostPages = getAllPosts().map((post) => ({
     url: `${siteConfig.url}/blog/${post.slug}`,
-    lastModified: new Date(post.publishDate),
+    lastModified: new Date(post.date),
     changeFrequency: 'monthly' as const,
     priority: 0.6,
   }));

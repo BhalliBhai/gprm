@@ -16,6 +16,8 @@
     "@next/third-parties": "^16.2.6",
     "@uiw/react-md-editor": "^4.0.11",
     "@vercel/analytics": "^1.6.1",
+    "gray-matter": "^4.0.3",
+    "remark-gfm": "^4.0.0",
     "material-symbols": "^0.40.2",
     "next": "^16.3.0",
     "react": "^19.2.8",
