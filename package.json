@@ -1,6 +1,6 @@
 {
   "name": "gprm",
-  "version": "0.1.0",
+  "version": "1.5.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -11,14 +11,15 @@
   "dependencies": {
     "@google/generative-ai": "^0.24.1",
     "@mdx-js/loader": "^3.1.1",
-    "@next/mdx": "^16.2.12",
+    "@mdx-js/react": "^3.1.1",
+    "@next/mdx": "^16.3.0",
     "@next/third-parties": "^16.2.6",
     "@uiw/react-md-editor": "^4.0.11",
     "@vercel/analytics": "^1.6.1",
     "material-symbols": "^0.40.2",
-    "next": "^16.2.6",
-    "react": "^19.2.6",
-    "react-dom": "^19.2.6",
+    "next": "^16.3.0",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
     "simple-icons": "^16.27.0"
   },
   "devDependencies": {
@@ -28,7 +29,7 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
-    "eslint-config-next": "16.1.6",
+    "eslint-config-next": "^16.3.0",
     "tailwindcss": "^4",
     "typescript": "^5"
   }
