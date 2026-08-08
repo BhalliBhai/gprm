@@ -27,10 +27,18 @@ export default function BlogImage({
     return null;
   }
 
+  const imageClassName = [
+    className ?? '',
+    props.fill ? 'h-full w-full' : '',
+    'object-cover',
+  ]
+    .filter(Boolean)
+    .join(' ');
+
   return (
-    <div
+    <span
       className={[
-        'relative overflow-hidden',
+        'relative block overflow-hidden',
         props.fill ? 'h-full w-full' : '',
         containerClassName ?? '',
       ]
@@ -38,17 +46,17 @@ export default function BlogImage({
         .join(' ')}
     >
       {!isLoaded ? (
-        <div className="absolute inset-0 animate-pulse bg-slate-200/70 dark:bg-slate-800/70" />
+        <span className="absolute inset-0 animate-pulse bg-slate-200/70 dark:bg-slate-800/70" />
       ) : null}
 
       <Image
         src={src}
         alt={alt}
-        className={className}
+        className={imageClassName}
         onLoad={() => setIsLoaded(true)}
         onError={() => setHasError(true)}
         {...props}
       />
-    </div>
+    </span>
   );
 }

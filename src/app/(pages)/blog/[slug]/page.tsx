@@ -156,7 +156,7 @@ export default async function BlogPostPage({ params }: PageProps) {
           </p>
 
           {post.coverImage ? (
-            <div className="mt-8 overflow-hidden rounded-4xl border border-primary/10">
+            <div className="mt-8 h-72 overflow-hidden rounded-4xl border border-primary/10 sm:h-[28rem]">
               <BlogImage
                 src={post.coverImage}
                 alt={post.title}

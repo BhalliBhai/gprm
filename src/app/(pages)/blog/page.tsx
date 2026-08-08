@@ -40,7 +40,7 @@ export default function BlogIndexPage() {
             key={post.slug}
             className="group overflow-hidden rounded-2xl border border-primary/30 hover:border-primary/50  hover:shadow-[0_10px_70px_-40px_rgba(17,212,82,0.45)] transition-transform duration-500"
           >
-            <div className="relative min-h-60 overflow-hidden">
+            <div className="relative aspect-[16/9] overflow-hidden">
               {post.coverImage ? (
                 <BlogImage
                   src={post.coverImage}
