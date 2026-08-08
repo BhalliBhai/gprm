@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import mdxComponents from "@/mdx-components";
+import mdxComponents from "../mdx-components";
 import type { ComponentType } from "react";
 
 interface BlogPostContentProps {

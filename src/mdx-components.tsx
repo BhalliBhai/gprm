@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { ComponentPropsWithoutRef } from "react";
 import type { MDXComponents } from "mdx/types";
-import BlogImage from "@/components/BlogImage";
+import BlogImage from "./components/BlogImage";
 
 const MdxImage = ({ alt, src, className, width, height, ...props }: ComponentPropsWithoutRef<"img">) => {
   const imageSrc = typeof src === "string" ? src : "";

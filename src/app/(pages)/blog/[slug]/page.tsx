@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import Breadcrumbs from "@/components/Breadcrumbs";
-import BlogImage from "@/components/BlogImage";
-import BlogPostContent from "@/components/BlogPostContent";
-import { getAllPosts, getPostBySlug, getRelatedPosts } from "@/lib/blog";
-import { siteConfig } from "@/config/site";
+import Breadcrumbs from "../../../../components/Breadcrumbs";
+import BlogImage from "../../../../components/BlogImage";
+import BlogPostContent from "../../../../components/BlogPostContent";
+import { getAllPosts, getPostBySlug, getRelatedPosts } from "../../../../lib/blog";
+import { siteConfig } from "../../../../config/site";
 
 interface PageProps {
   params: Promise<{

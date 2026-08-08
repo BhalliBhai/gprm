@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Breadcrumbs from "@/components/Breadcrumbs";
-import BlogImage from "@/components/BlogImage";
-import { getAllPosts } from "@/lib/blog";
-import { siteConfig } from "@/config/site";
+import Breadcrumbs from "../../../components/Breadcrumbs";
+import BlogImage from "../../../components/BlogImage";
+import { getAllPosts } from "../../../lib/blog";
+import { siteConfig } from "../../../config/site";
 
 export const metadata: Metadata = {
   title: "Blog | GPRM",
