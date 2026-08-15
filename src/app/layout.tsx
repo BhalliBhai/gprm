@@ -7,6 +7,7 @@ import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { siteConfig } from '@/config/site'
+import Script from "next/script";
 
 const spaceGrotesk = Space_Grotesk({
   variable: "--font-display",
@@ -286,6 +287,13 @@ export default function RootLayout({
           <Footer />
         </div>
         <GoogleAnalytics gaId={"G-D4902R6XMY"} />
+        <Script
+          id="adsense-init"
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5791501804338014"
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );
