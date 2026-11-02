@@ -15,8 +15,9 @@ const MdxImage = ({ alt, src, className, width, height, ...props }: ComponentPro
         alt={alt ?? "Blog image"}
         width={parsedWidth}
         height={parsedHeight}
+        sizes="(max-width: 768px) 100vw, 768px"
         className="h-auto w-full object-cover"
-        {...(props as any)}
+        {...props}
       />
     </span>
   );
@@ -86,5 +87,9 @@ const mdxComponents: MDXComponents = {
     <td className={`border border-slate-200 px-4 py-3 align-top text-sm text-slate-700 dark:border-slate-800 dark:text-slate-200 ${className ?? ""}`} {...props} />
   ),
 };
+
+export function useMDXComponents(): MDXComponents {
+  return mdxComponents;
+}
 
 export default mdxComponents;

@@ -36,70 +36,67 @@ export default function BlogIndexPage() {
 
       <section className="mx-auto grid gap-6 md:grid-cols-2 xl:grid-cols-3 my-10">
         {posts.map((post) => (
-          <article
-            key={post.slug}
-            className="group overflow-hidden rounded-2xl border border-primary/30 hover:border-primary/50  hover:shadow-[0_10px_70px_-40px_rgba(17,212,82,0.45)] transition-transform duration-500"
-          >
-            <div className="relative aspect-[16/9] overflow-hidden">
-              {post.coverImage ? (
-                <BlogImage
-                  src={post.coverImage}
-                  alt={post.title}
-                  fill
-                  sizes="(max-width: 768px) 100vw, 33vw"
-                  className="object-cover transition duration-500 ease-out group-hover:scale-105"
-                />
-              ) : (
-                <div className="relative h-full w-full bg-gradient-to-br from-[#07150f] via-[#0c2b1d] to-[#0b3c29]">
-                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(17,212,82,0.18),transparent_35%)]" />
-                  <div className="absolute inset-x-0 bottom-0 p-6">
-                    <p className="text-xs uppercase tracking-[0.32em] text-primary/70">GitHub blog</p>
-                    <h2 className="mt-4 text-2xl font-bold text-white">{post.title}</h2>
+          <article key={post.slug} className="overflow-hidden rounded-2xl">
+            <Link
+              href={`/blog/${post.slug}`}
+              className="group block h-full border border-primary/30 hover:border-primary/50 hover:shadow-[0_10px_70px_-40px_rgba(17,212,82,0.45)] transition-transform duration-500"
+            >
+              <div className="relative aspect-[16/9] overflow-hidden">
+                {post.coverImage ? (
+                  <BlogImage
+                    src={post.coverImage}
+                    alt={post.title}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                    className="object-cover transition duration-500 ease-out group-hover:scale-105"
+                  />
+                ) : (
+                  <div className="relative h-full w-full bg-gradient-to-br from-[#07150f] via-[#0c2b1d] to-[#0b3c29]">
+                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(17,212,82,0.18),transparent_35%)]" />
+                    <div className="absolute inset-x-0 bottom-0 p-6">
+                      <p className="text-xs uppercase tracking-[0.32em] text-primary/70">GitHub blog</p>
+                      <h2 className="mt-4 text-2xl font-bold text-white">{post.title}</h2>
+                    </div>
                   </div>
+                )}
+                <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent" />
+              </div>
+
+              <div className="p-6">
+                <div className="flex flex-wrap items-center gap-3 text-xs text-slate-400">
+                  <time dateTime={post.date}>
+                    {new Date(post.date).toLocaleDateString("en-US", {
+                      month: "short",
+                      day: "numeric",
+                      year: "numeric",
+                    })}
+                  </time>
+                  <span>•</span>
+                  <span>{post.readingTime}</span>
                 </div>
-              )}
-              <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent" />
-            </div>
 
-            <div className="p-6">
-              <div className="flex flex-wrap items-center gap-3 text-xs text-slate-400">
-                <time dateTime={post.date}>
-                  {new Date(post.date).toLocaleDateString("en-US", {
-                    month: "short",
-                    day: "numeric",
-                    year: "numeric",
-                  })}
-                </time>
-                <span>•</span>
-                <span>{post.readingTime}</span>
-              </div>
-
-              <h2 className="mt-4 text-2xl font-semibold text-white leading-tight">
-                <Link href={`/blog/${post.slug}`} className="hover:text-primary">
+                <h2 className="mt-4 text-2xl font-semibold text-white leading-tight group-hover:text-primary">
                   {post.title}
-                </Link>
-              </h2>
+                </h2>
 
-              <p className="mt-4 text-sm leading-7 text-slate-300 line-clamp-3">{post.description}</p>
+                <p className="mt-4 text-sm leading-7 text-slate-300 line-clamp-3">{post.description}</p>
 
-              <div className="mt-6 flex flex-wrap gap-2">
-                {post.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="rounded-full border border-primary/15 bg-slate-900/70 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-200"
-                  >
-                    {tag}
-                  </span>
-                ))}
+                <div className="mt-6 flex flex-wrap gap-2">
+                  {post.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="rounded-full border border-primary/15 bg-slate-900/70 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-200"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+
+                <span className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-primary transition group-hover:text-primary/80">
+                  Read article →
+                </span>
               </div>
-
-              <Link
-                href={`/blog/${post.slug}`}
-                className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-primary transition hover:text-primary/80"
-              >
-                Read article →
-              </Link>
-            </div>
+            </Link>
           </article>
         ))}
       </section>

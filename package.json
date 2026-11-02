@@ -4,8 +4,12 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
     "start": "next start",
+    "build": "next build",
+    "cf:build": "opennextjs-cloudflare build",
+    "cf:deploy": "opennextjs-cloudflare deploy",
+    "preview": "npm run cf:build && opennextjs-cloudflare preview",
+    "deploy": "npm run cf:build && npm run cf:deploy -- --keep-vars",
     "lint": "eslint"
   },
   "dependencies": {
@@ -17,14 +21,15 @@
     "@uiw/react-md-editor": "^4.0.11",
     "@vercel/analytics": "^1.6.1",
     "gray-matter": "^4.0.3",
-    "remark-gfm": "^4.0.0",
     "material-symbols": "^0.40.2",
     "next": "^16.3.0",
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
+    "remark-gfm": "^4.0.0",
     "simple-icons": "^16.27.0"
   },
   "devDependencies": {
+    "@opennextjs/cloudflare": "^1.20.15",
     "@tailwindcss/postcss": "^4",
     "@types/mdx": "^2.0.14",
     "@types/node": "^20",

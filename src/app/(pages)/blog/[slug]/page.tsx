@@ -17,6 +17,8 @@ export async function generateStaticParams() {
   return getAllPosts().map((post) => ({ slug: post.slug }));
 }
 
+export const dynamicParams = false;
+
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const resolvedParams = await params;
   const post = getPostBySlug(resolvedParams.slug);
@@ -156,13 +158,14 @@ export default async function BlogPostPage({ params }: PageProps) {
           </p>
 
           {post.coverImage ? (
-            <div className="mt-8 h-72 overflow-hidden rounded-4xl border border-primary/10 sm:h-[28rem]">
+            <div className="relative mt-8 aspect-[2/1] overflow-hidden rounded-4xl border border-primary/10 sm:aspect-[16/7]">
               <BlogImage
                 src={post.coverImage}
                 alt={post.title}
-                width={1600}
-                height={400}
-                className="h-auto w-full object-cover"
+                fill
+                sizes="(max-width: 768px) 100vw, 1152px"
+                preload
+                className="object-cover"
               />
             </div>
           ) : null}

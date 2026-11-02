@@ -5,13 +5,13 @@ const withMDX = createMDX({
   extension: /\.(md|mdx)$/,
   options: {
     remarkPlugins: ["remark-gfm"],
-    providerImportSource: "@mdx-js/react",
   },
 });
 
 const nextConfig: NextConfig = withMDX({
   pageExtensions: ["js", "jsx", "ts", "tsx", "md", "mdx"],
   images: {
+    qualities: [100, 75],
     dangerouslyAllowSVG: true,
     remotePatterns: [
       { protocol: "https", hostname: "komarev.com" },
