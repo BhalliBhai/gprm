@@ -12,7 +12,7 @@ export function Footer() {
               <div className="relative">
                 <div className="absolute -inset-1 bg-linear-to-r from-primary to-blue-600 rounded-lg blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                 <div className="relative bg-background-light dark:bg-background-dark p-2 rounded-lg border border-primary/10 flex items-center justify-center">
-                  <Image className="rounded-full" src="/icon0.svg" alt="Logo" width={50} height={50} />
+                  <Image className="rounded-full" src="/logo.png" alt="Logo" width={50} height={50} />
                 </div>
               </div>
               <div className="flex flex-col space-y-0">
