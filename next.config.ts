@@ -11,7 +11,8 @@ const withMDX = createMDX({
 const nextConfig: NextConfig = withMDX({
   pageExtensions: ["js", "jsx", "ts", "tsx", "md", "mdx"],
   images: {
-    qualities: [100, 75],
+    qualities: [70, 75, 100],
+    formats: ["image/avif", "image/webp"],
     dangerouslyAllowSVG: true,
     remotePatterns: [
       { protocol: "https", hostname: "komarev.com" },

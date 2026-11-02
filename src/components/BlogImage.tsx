@@ -1,7 +1,7 @@
 'use client';
 
 import Image, { type StaticImageData } from 'next/image';
-import { useEffect, useState, type ComponentPropsWithoutRef } from 'react';
+import { useState, type ComponentPropsWithoutRef } from 'react';
 
 type BlogImageProps = Omit<ComponentPropsWithoutRef<typeof Image>, 'src'> & {
   src?: string | StaticImageData | null;
@@ -13,15 +13,37 @@ export default function BlogImage({
   alt = '',
   className,
   containerClassName,
+  quality = 70,
+  ...props
+}: BlogImageProps) {
+  if (!src) {
+    return null;
+  }
+
+  const imageKey = typeof src === 'string' ? src : src.src;
+  return (
+    <BlogImageWithState
+      key={imageKey}
+      src={src}
+      alt={alt}
+      className={className}
+      containerClassName={containerClassName}
+      quality={quality}
+      {...props}
+    />
+  );
+}
+
+function BlogImageWithState({
+  src,
+  alt,
+  className,
+  containerClassName,
+  quality,
   ...props
 }: BlogImageProps) {
   const [hasError, setHasError] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
-
-  useEffect(() => {
-    setHasError(false);
-    setIsLoaded(false);
-  }, [src]);
 
   if (!src || hasError) {
     return null;
@@ -53,6 +75,7 @@ export default function BlogImage({
         src={src}
         alt={alt}
         className={imageClassName}
+        quality={quality}
         onLoad={() => setIsLoaded(true)}
         onError={() => setHasError(true)}
         {...props}

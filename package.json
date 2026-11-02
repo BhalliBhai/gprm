@@ -3,8 +3,10 @@
   "version": "1.5.0",
   "private": true,
   "scripts": {
+    "predev": "node scripts/generate-blog-manifest.mjs",
     "dev": "next dev",
     "start": "next start",
+    "prebuild": "node scripts/generate-blog-manifest.mjs",
     "build": "next build",
     "cf:build": "opennextjs-cloudflare build",
     "cf:deploy": "opennextjs-cloudflare deploy",

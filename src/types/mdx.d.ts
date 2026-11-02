@@ -1,4 +1,6 @@
 declare module "*.mdx" {
-  let MDXComponent: (props: any) => JSX.Element;
-  export default MDXComponent;
+  import type { MDXProps } from "mdx/types";
+
+  export const metadata: Record<string, unknown>;
+  export default function MDXComponent(props: MDXProps): JSX.Element;
 }

@@ -55,7 +55,7 @@ export const metadata = {
 Write the article in Markdown or MDX.
 ```
 
-Place the cover image under `public/images/` (or use another valid public image path). Blog cards, article pages, metadata, and the sitemap are generated from the MDX files at build time.
+Place the cover image under `public/images/` (or use another valid public image path). Blog cards, article pages, metadata, and the sitemap are generated from the MDX files at build time. The prebuild step writes a static manifest of every MDX file so Cloudflare builds include all articles and their components in the Worker bundle.
 
 ## Contributing
 Contributions are welcome! Please feel free to open an issue or submit a pull request if you notice bugs, want to suggest new features, or add tech stack icons.
