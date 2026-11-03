@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { Analytics } from "@vercel/analytics/next";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { Space_Grotesk } from "next/font/google";
 import "material-symbols/outlined.css";
@@ -282,7 +281,6 @@ export default function RootLayout({
           <Header />
           <main className="flex-1">
             {children}
-            <Analytics />
           </main>
           <Footer />
         </div>
